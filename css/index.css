@@ -1,0 +1,86 @@
+:root{
+	--background:  #2f2f2f;
+	--green: #00A651;
+	--white: #FFFFFF;
+}
+body{
+	background-color: var(--background);
+}
+h1{
+	color: var(--white);
+	font-family: 'Inder', sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 64px;
+}
+h2{
+	padding: 58px;
+	color: #000;
+	font-weight: 700;
+	font-family: 'Inder', sans-serif;
+	font-style: normal;
+	font-size: 58px;
+}
+.content{
+	background-color: var(--background);
+	height: 100vh;
+	text-align: center;
+}
+.content-form{
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.btn-landing{
+	margin-top: 40px;
+	font-size: 30px;
+	background-color: var(--background);
+	border-color: var(--green);
+	border-style: solid;
+	border-width: 5px;
+	border-radius: 50px;
+	min-width: 393px;
+	color: rgba(255,255,255,0.5);
+	height: 91px;
+	transition-duration:  0.125s;
+}
+.btn-landing:hover{
+	font-size: 35px;
+	color: var(--white);
+	transition-duration:  0.125s;
+}
+.login-form{
+	width: 650px;
+	height: 750px;
+	border-radius: 50px;
+	background-color: var(--white);
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.25);
+}
+.hidden{
+	display: none;
+}
+.login-exit{
+	height: 100vh;
+}
+a{
+	position: absolute;
+	top: 48px;
+	right: 48px;
+}
+i{
+	font-size: 48px;
+	color: var(--background);
+	transition-duration: 125ms;
+
+}
+i:hover{
+	opacity: 50%;
+	transition-duration: 125ms;
+}
