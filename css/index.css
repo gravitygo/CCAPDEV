@@ -131,16 +131,19 @@ i:hover{
 	background-color: var(--background);
 	text-decoration: none;
 }
+.input-btn:hover{
+	color: rgba(255,255,255,0.5);
+}
 .input-btn p{
 	display: block;
 	margin: 0 auto;
-}
-.input-btn p:hover{
-	opacity: 50%;
 }
 .forgot-btn{
 	padding-top: 20px;
 	text-align: right;
 	text-decoration: none;
 	font-size: 20px;
+}
+.forgot-btn:hover{
+	opacity: 50%;
 }
