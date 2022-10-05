@@ -38,9 +38,27 @@
 		<div class="login-exit hidden">
 		</div>
 		<div class="login-form hidden">
-			<a onclick="loginRemove()"><i class="fa-solid fa-xmark"></i></a>
+			<a class="exit" onclick="loginRemove()"><i class="fa-solid fa-xmark"></i></a>
 			<h2>Log in</h2>
-			<input type="button" onclick="window.location.href='entry.html'">
+			
+			<div class="input">
+				<h3>Username</h3>
+				<input type="text" class="input-text" name="">
+			</div>
+			<div class="input">
+				<h3>Password</h3>
+				<input type="password" class="input-text" name="">
+			</div>
+			<div class="input-remember">
+				<input type="checkbox" class="input-checkbox" name=""><p>Remember Me</p>
+			</div>
+			<hr>
+			<div class="input">
+				<a href="entry.html" class="input-btn"><p>Sign in</p></a>
+			</div>
+			<div class="input">
+				<a class="forgot-btn"href="#"><p>Forgot Password?</p></a>
+			</div>
 		</div>
 
 	</div>
