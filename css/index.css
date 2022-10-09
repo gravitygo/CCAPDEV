@@ -4,10 +4,14 @@
 	--white: #FFFFFF;
 }
 
-h1{
-	color: var(--white);
+body{
 	font-family: 'Inder', sans-serif;
 	font-style: normal;
+	background-color: var(--white);
+
+}
+h1{
+	color: var(--white);
 	font-weight: 400;
 	font-size: 64px;
 }
@@ -15,24 +19,13 @@ h2{
 	margin: 58px auto 20px;
 	color: #000;
 	font-weight: 700;
-	font-family: 'Inder', sans-serif;
-	font-style: normal;
 	font-size: 58px;
 }
 h3{
 	font-size: 40px;
 	font-weight: 200;
 }
-i{
-	font-size: 48px;
-	color: var(--background);
-	transition-duration: 125ms;
 
-}
-i:hover{
-	opacity: 50%;
-	transition-duration: 125ms;
-}
 .btn-landing{
 	margin-top: 40px;
 	font-size: 30px;
@@ -70,6 +63,15 @@ i:hover{
 	position: absolute;
 	top: 48px;
 	right: 48px;
+}
+.forgot-btn{
+	padding-top: 20px;
+	text-align: right;
+	text-decoration: none;
+	font-size: 20px;
+}
+.forgot-btn:hover{
+	opacity: 50%;
 }
 .login-exit{
 	height: 100vh;
@@ -138,12 +140,47 @@ i:hover{
 	display: block;
 	margin: 0 auto;
 }
-.forgot-btn{
-	padding-top: 20px;
-	text-align: right;
-	text-decoration: none;
-	font-size: 20px;
+.icon-x{
+	font-size: 48px;
+	color: var(--background);
+	transition-duration: 125ms;
+
 }
-.forgot-btn:hover{
+.icon-x:hover{
 	opacity: 50%;
+	transition-duration: 125ms;
+}
+.nav-profile{
+	width: 40px;
+	border-radius: 30px;
+}
+.nav-item{
+	margin-left: 30px;
+}
+.card{
+	margin-left: auto;
+	box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.25);
+}
+.profile-drop-down{
+	position: fixed;
+	right: 20px;
+	top: 70px;
+	z-index: 1;
+}
+.form-switch{
+	float: right;
+}
+.popup-icon{
+	padding: 0 10px 0 0;
+}
+.card a{
+	text-decoration: none;
+	color: black;
+}
+.card a:hover{
+	color: black;
+	opacity: 50%;
+}
+.pop-up-hr{
+	margin: 18px 0 0;
 }

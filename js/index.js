@@ -8,3 +8,13 @@ function loginRemove(){
 	$(".login-form").addClass("hidden");
 	$(".login-exit").removeAttr("onclick");
 }
+function profilePopUp(){
+	$(".profile-drop-down").removeClass("hidden");
+	$(".navbar-brand").removeAttr("onclick");
+	$(".navbar-brand").attr("onclick","profileRemove()");
+}
+function profileRemove(){
+	$(".profile-drop-down").addClass("hidden");
+	$(".navbar-brand").removeAttr("onclick");
+	$(".navbar-brand").attr("onclick","profilePopUp()");
+}
