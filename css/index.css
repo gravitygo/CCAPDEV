@@ -2,6 +2,7 @@
 	--background:  #2f2f2f;
 	--green: #00A651;
 	--white: #FFFFFF;
+	--red: #CC1B1B;
 }
 
 body{
@@ -59,10 +60,125 @@ h3{
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
+.entry{
+	margin-top: 100px;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: row;
+	box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
+}
+.entry-prof-img{
+	width: 150px;
+	border-radius: 75px;
+}
+.entry-name{
+	font-size: 36px;
+	margin: 0;
+}
+.entry-school{
+	font-size:  20px;
+	margin: 0;
+} 
+.entry-subject{
+	font-size:  16px;
+	margin: 0;
+}
+.entry-prof{
+	flex: 1;
+	border-style: none solid none none;
+	border-width: 1px;
+	margin: 20px 20px;
+	border-color: #aaa;
+	justify-content: center;
+	text-align: center;
+	padding-bottom: 50px;
+	padding-top: 20px;
+}
+.entry-summary{
+	flex: 3;
+	padding-bottom: 50px;
+	padding-top: 20px;
+	
+}
+.entry-summary-content{
+	overflow: wrap;
+	text-align: justify;
+	font-size: 20px;
+	line-height: 20px;
+}
+.entry-summary-date{
+	color: #aaa;
+	font-size: 15px;
+}
+.entry-menus{
+	flex: 1;
+	/*text-align: right;*/
+	padding-bottom: 20px;
+	padding-top: 20px;
+}
+.entry-menu:hover{
+	opacity: 50%;
+	transform: rotate(90deg)translate(0,20px);
+}
+.entry-menu-select{
+	transform: rotate(90deg)translate(0,20px);
+}
+.entry-menu{
+	font-size: 28px;
+	padding-right: 20px;
+	padding-bottom: 10px;
+	transition-property: transform;
+	transition-duration: .125s;
+}
+.entry-buttons{
+	position: relative;
+	height: 100%;
+	text-align: right;
+}
+.entry-vote{
+	position: absolute;
+	right: 20px;
+	bottom: 0;
+	font-size: 28px;
+}
 .exit{
 	position: absolute;
 	top: 48px;
 	right: 48px;
+}
+.entry-burger{
+	position: absolute;
+	right: 20px;
+	text-align: left;
+	width: 13rem;
+}
+.entry-burger .card{
+	border-radius: 5px 0 5px 5px;
+	box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.25);
+}
+.up-vote:hover{
+	color: var(--green);
+}
+.up-vote-select{
+	color: var(--green);
+}
+.down-vote:hover{
+	color: var(--red);
+}
+.down-vote-select{
+	color: var(--red);
+}
+.positive,.negative,.zero{
+	display: inline;
+}
+.positive{
+	color: var(--green);
+}
+.negative{
+	color: var(--red);
+}
+.zero{
+	color: #aaa;
 }
 .forgot-btn{
 	padding-top: 20px;
