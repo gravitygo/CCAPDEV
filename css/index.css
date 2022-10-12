@@ -233,6 +233,7 @@ h3 {
 }
 
 .btn-edit {
+    margin-left: 50px;
     appearance: button;
     background-color: #00A651;
     border: solid transparent;
@@ -245,7 +246,6 @@ h3 {
     font-weight: 700;
     letter-spacing: .8px;
     line-height: 20px;
-    margin: 0;
     outline: none;
     overflow: visible;
     padding: 13px 16px;
@@ -254,8 +254,7 @@ h3 {
     transform: translateZ(0);
     transition: filter .2s;
     vertical-align: middle;
-    white-space: nowrap;
-    width: 50%;
+    width: 150px;
 }
 
 .btn-editprofile {
@@ -281,8 +280,7 @@ h3 {
     transform: translateZ(0);
     transition: filter .2s;
     vertical-align: middle;
-    white-space: nowrap;
-    width: 50%;
+    width: 150px;
     float: right;
 }
 
@@ -305,14 +303,14 @@ h3 {
 .btn-edit:hover:not(:disabled),
 .btn-editprofile:hover:not(:disabled) {
     filter: brightness(1.1);
-    -webkit-filter: brightness(1.1);
 }
 
 .pic-profile {
     vertical-align: middle;
     width: 250px;
+    min-width: 250px;
     height: 250px;
-    border-radius: 50%;
+    border-radius: 50px;
 }
 
 .column-profile-divider {
@@ -350,7 +348,7 @@ hr.divider-horizontal {
 
 .column-profile-review {
     float: left;
-    width: 33.3%;
+    width: 250px;
     padding: 10px 8px;
 }
 
