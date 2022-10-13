@@ -56,6 +56,8 @@ h3{
     width: 200px;
     height: auto;
     border-radius: 50%;
+	align-self: center;
+	margin-left: 40px;
 }
 
 .back-icon{
@@ -531,6 +533,7 @@ h3{
 	color: var(--green);
 	font-weight: 700;
 }
+
 .right-sign-up{
 	display: flex;
 	padding: 0 250px 0;
@@ -665,24 +668,145 @@ h3{
 
 /* Professor Profile / Description Styles */
 
-/* .container-subjects h4{
-    margin: 58px auto 20px;
+.professor-stars {
+	margin-left: 50px;
+}
+
+.avatar-img {
+	align-items: center;
+	justify-content: center;
+}
+
+.side-prof-area {
+    float: left;
+    padding: 150px 50px;
+	width: 500px;
+}
+
+.container-reviews h4{
+    margin-top: 20px;
     color: #000;
     font-weight: 200;
     font-size: 30px;
+	margin-left: 20px;
 }
 
-.subjects-box {
+.reviews-box {
     border-radius: 20px;
-    background-color:#dadada;
-    height: 200px;
+    height: 370px;
     padding-top: 15px;
+	margin-left: 20px;
 }
 
-.subject-oval {
+.review-oval {
    margin-left: 20px;
+   border-bottom: #2f2f2f solid;
+   border-width: 1px;
+   padding-top: 10px;
+}
+
+
+.review-oval p {
+	margin-bottom: 0px;
+}
+
+.container-starVote {
+	display: flex;
+	width:50%;
+}
+
+.star-rev {
+	margin: 0px;
+	align-items: stretch;
+}
+
+.review-vote {
+	margin-right: 20px;
+	padding-top: 20px;
+	padding-left: 50px;
+}
+
+.profProfile-vote{
+	justify-content: center;
+	align-items: center;
+	padding-left: 120px;
+}
+
+.profProfile-content {
+	float: left;
+	width: 1000px;
+	border-radius: 25px;
+	border-color: #2F2F2F;
+	border-width: 3px;
+	border-style: solid ;
+	margin-top: 150px;
+	align-items: center;
+	justify-content: center;
+	padding: 10px;
+	height: 500px;
+}
+
+.profProfile-review-container {
+	border-color: #AAAAAA;
+	border-style: solid;
+	border-width: 1px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.container-real-subjects {
+	margin-top: 40px;
+	padding: 10px;
+	border-color: #AAAAAA;
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 25px;
+
+}
+
+.container-real-subjects h4 {
+	text-align: center;
+	padding-bottom: 5px;
+	border-bottom: #2f2f2f solid;
+	border-width: 3px;
+}
+
+.real-subjects-box {
+	height: 150px;
+	margin-bottom: 5px;
+}
+
+.real-subject-oval {
+	padding-top: 3px;
+	padding-bottom: 3px;
+	/* border-bottom: #2F2F2F solid;
+	border-width: 1px; */
+}
+
+.profProfile-comment {
+	float: left;
+	width: 1000px;
+	border-radius: 25px;
+	border-color: #2F2F2F;
+	border-width: 3px;
+	border-style: solid ;
+	margin-top: 20px;
+	align-items: center;
+	justify-content: center;
+	padding: 30px;
+	height: 320px;
+}
+
+.comment-label {
+	font-size: 30px;
+	font-weight: 200;
+}
+
+.form-control {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	height: 120px;
+}
+
+/* .button-comment {
 } */
-
-
-
-
