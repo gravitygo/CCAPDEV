@@ -25,7 +25,43 @@
 	<title>Sign Up</title>
 </head>
 <body>
-	<!-- code here -->
+	<nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="index.html">PROFESSORS TO PICK</a>
+		</div>
+	</nav>
+	<div class="sign-up-content">
+		<div class="header">
+			<div class="back-icon">
+				<a href="index.html"><i class="fa-solid fa-circle-chevron-left"></i></a>	
+			</div>
+			<h2>Sign Up</h2>		
+		</div>
+		<div class="sign-up-form">
+			<div class="left-sign-up">
+				<h4>Add Profile Picture</h4>
+				<div class="img-form">
+					<img id="uploadPreview" src="assets/default.jpg" />
+					<input id="uploadImage" type="file" name="myPhoto" onchange="PreviewImage();"/>
+				</div>
+				<textarea class="sign-up-bio" placeholder="Biography"></textarea>
+			</div>
+			<div class="right-sign-up">
+				<input type="text" name="" placeholder="Username">
+				<input type="text" name="" placeholder="School">
+				<div>
+					<input type="number" name="" placeholder="Year level">
+					<input type="text" name="" placeholder="Course">
+				</div>
+				<input type="password" class= "sign-up-password"name="" placeholder="Password">
+				<input type="password" class= "sign-up-password"name="" placeholder="Retype Password">
+				<div>					
+					<input type="button" name="" class="save" value="SAVE">
+					<input type="button" name="" class="cancel" href="index.html" onclick="window.location='index.html';" value="CANCEL">
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 <script type="text/javascript" src="js/index.js"></script>
 </html>
