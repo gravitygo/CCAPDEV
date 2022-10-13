@@ -28,45 +28,45 @@
 
 <body>
     <!-- Header -->
-    <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">PROFESSORS TO PICK</a>
+    <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark ">
+        <div class="container-fluid ">
+            <a class="navbar-brand " href="# ">PROFESSORS TO PICK</a>
         </div>
 
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="entry.html">Home</a>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+            <li class="nav-item ">
+                <a class="nav-link " aria-current="page " href="entry.html ">Home</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="editProfile.html">Profile</a>
+            <li class="nav-item ">
+                <a class="nav-link " href="editProfile.html ">Profile</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="catalog.html">Catalog</a>
+            <li class="nav-item ">
+                <a class="nav-link active " href="catalog.html ">Catalog</a>
             </li>
-            <li class="nav-item">
-                <a class="navbar-brand" onclick="profilePopUp()"><img class="nav-profile" src="assets/default.jpg"></a>
+            <li class="nav-item ">
+                <a class="navbar-brand " onclick="profilePopUp() "><img class="nav-profile " src="assets/default.jpg "></a>
             </li>
         </ul>
     </nav>
     <div class="profile-drop-down hidden">
-        <div class="card" style="width: 18rem;">
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                    <label><i class="popup-icon fa-solid fa-moon"></i>Dark Mode</label>
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" id="dark-mode" type="checkbox">
+        <div class="card " style="width: 18rem; ">
+            <ul class="list-group list-group-flush ">
+                <li class="list-group-item ">
+                    <label><i class="popup-icon fa-solid fa-moon "></i>Dark Mode</label>
+                    <div class="form-check form-switch ">
+                        <input class="form-check-input " id="dark-mode " type="checkbox ">
                     </div>
-                    <hr class="pop-up-hr">
+                    <hr class="pop-up-hr ">
                 </li>
-                <li class="list-group-item"><a href="editProfile.html"><i class="popup-icon fa-solid fa-pen-to-square"></i>Edit Profile</a></li>
-                <li class="list-group-item"><a href="addProf.html"><i class="popup-icon fa-solid fa-plus"></i>Add Professor</a></li>
-                <li class="list-group-item"><a href="index.html"><i class="popup-icon fa-solid fa-right-from-bracket"></i>Log Out</a></li>
+                <li class="list-group-item "><a href="editProfile.html "><i class="popup-icon fa-solid fa-pen-to-square "></i>Edit Profile</a></li>
+                <li class="list-group-item "><a href="addProf.html "><i class="popup-icon fa-solid fa-plus "></i>Add Professor</a></li>
+                <li class="list-group-item "><a href="index.html "><i class="popup-icon fa-solid fa-right-from-bracket "></i>Log Out</a></li>
             </ul>
         </div>
     </div>
 
     <!-- Body -->
-    <div class="add-prof-title">
+    <div class="add-prof-title ">
         <h2> Add Professor </h2>
     </div>
 
@@ -75,39 +75,71 @@
             <img src="assets/default.jpg " class="pic-profile " alt="Avatar ">
 
             <div class="container-addprof-upload ">
-                <button class="btn-edit " role="button ">Upload</button>
+                <button class="btn-editavatar " role="button ">Upload</button>
             </div>
         </div>
     </div>
 
-    <div class="column-add-prof-details">
-        <form action="/action_page.php">
-            <input class="addprof-text" type=" text " id="fname" name="fname" placeholder="First Name"><br><br>
-            <input class="addprof-text" type="text " id="lname" name="lname" placeholder="Last Name"><br><br>
-            <input class="addprof-text" type="text " id="school" name="school" placeholder="School"><br><br>
-            <select class="select-dept" id="department " name="department">
-			<option value="hidden" disabled selected>Department</option>	
-            <option value="CCS">College of Computer Studies</option>
-            <option value="COS">College of Science</option>
-            <option value="COB">College of Business</option>
-            <option value="GCOE">Gokongwei College of Engineering</option>
+    <div class="column-add-prof-details ">
+        <form action="/action_page.php ">
+            <input class="addprof-text " type=" text " id="fname " name="fname " placeholder="First Name "><br><br>
+            <input class="addprof-text " type="text " id="lname " name="lname " placeholder="Last Name "><br><br>
+            <input class="addprof-text " type="text " id="school " name="school " placeholder="School "><br><br>
+            <select class="select-dept " id="department " name="department ">
+			<option value="hidden " disabled selected>Department</option>	
+            <option value="CCS ">College of Computer Studies</option>
+            <option value="COS ">College of Science</option>
+            <option value="COB ">College of Business</option>
+            <option value="GCOE ">Gokongwei College of Engineering</option>
 			</select>
             <br><br>
             <label> Subjects: </label>
             <br>
-            <select class="select-dept" name="subjects[]" id="subjects" multiple="multiple" style="height:150px">
-                <option value="CCPROG1">CCPROG1</option>
-                <option value="CCPROG2">CCPROG2</option>
-                <option value="CCPROG3">CCPROG3</option>
-                <option value="ITNET">ITNET</option>
-                <option value="CCAPDEV">CCAPDEV</option>
-                <option value="CALENG1">CALENG1</option>
+            <select class="select-dept " name="subjects[] " id="subjects " multiple="multiple " style="height:150px ">
+                <option value="CCPROG1 ">CCPROG1</option>
+                <option value="CCPROG2 ">CCPROG2</option>
+                <option value="CCPROG3 ">CCPROG3</option>
+                <option value="ITNET ">ITNET</option>
+                <option value="CCAPDEV ">CCAPDEV</option>
+                <option value="CALENG1 ">CALENG1</option>
                 </select>
             <br><br>
-            <input class="submit-button" type="submit " value="Submit ">
-            <button class="cancel-button" role="button">Cancel</button>
+            <input class="submit-button " type="submit " value="Submit ">
+            <button class="cancel-button " role="button ">Cancel</button>
         </form>
     </div>
 </body>
 
 </html>
+
+<style>
+    @media (max-width: 1200px) {
+        .column-add-prof-picture {
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 500px;
+            width: 500px;
+            padding: 50px 5px;
+            text-align: center;
+        }
+        .btn-editavatar {
+            margin-left: 0px;
+        }
+        .column-add-prof-details {
+            top: 20;
+            bottom: 0;
+            margin: auto;
+            margin-top: 5px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 100px;
+            width: 500px;
+            text-align: center;
+        }
+    }
+</style>
