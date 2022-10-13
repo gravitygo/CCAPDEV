@@ -3,7 +3,7 @@
 	--green: #00A651;
 	--white: #FFFFFF;
 	--red: #CC1B1B;
-	--neutral: var(--neutral)AAA;
+	--neutral: #AAAAAA;
 }
 @keyframes background{
 	from{
@@ -34,6 +34,20 @@ h2{
 h3{
 	font-size: 40px;
 	font-weight: 200;
+}
+.about-me-textarea textarea{
+	display: block;
+	width: 75%;
+	margin:  0 auto;
+	resize: none;
+	height: 10em;
+	border-radius: 25px;
+	padding: 10px;
+	border-color: var(--neutral);	
+	border-width: 2px;
+}
+.about-me-textarea button{
+	margin: 20px auto;
 }
 .accordion-header {
     margin-top: 0;
@@ -70,6 +84,16 @@ h3{
 }
 .body{
 	margin-top: 62px;
+	display: flex;
+	flex-direction: row;
+}
+.btn-green{
+	background-color: var(--green);
+	padding: 5px 20px 5px;
+	color: var(--white);
+	border-radius: 10px;
+	border-style: none;
+
 }
 .btn-landing{
 	margin-top: 40px;
@@ -132,6 +156,20 @@ h3{
     margin-top: 30px;
     align-self: center;
 }
+.column-profile-main{
+	border-style: none none none solid;
+	border-color: var(--neutral);
+	border-width: 2px;
+	padding: 80px 120px;
+}
+.column-profile-review{
+	display: flex;
+}
+.column-profile-review .card{
+	margin: 20px;
+	width: 308px;
+	height: 334px;
+}
 .content{
 	background-color: #2F2F2F;
 	background-image: url("../assets/background.svg");
@@ -150,6 +188,9 @@ h3{
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+}
+.container-aboutme{
+	text-align: center;
 }
 .down-vote:hover{
 	color: var(--red);
@@ -478,13 +519,18 @@ h3{
 .profile-img{
 	width: 360px;
 	height: 360px;
+	margin: 80px 120px;
+	text-align: center;
 }
 .profile-img img{
 	width: 360px;
 	height: 360px;
 	border-radius: 360px;	
 }
-
+.profile-main{
+	color: var(--green);
+	font-weight: 700;
+}
 .right-sign-up{
 	display: flex;
 	padding: 0 250px 0;
