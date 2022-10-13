@@ -35,6 +35,15 @@ h3{
 	font-size: 40px;
 	font-weight: 200;
 }
+.accordion-header {
+    margin-top: 0;
+}
+.avatar-img img{
+    width: 200px;
+    height: auto;
+    border-radius: 50%;
+}
+
 .back-icon{
 	color: #000; 
 	position: absolute; 
@@ -52,6 +61,12 @@ h3{
 .back-icon a:hover{
 	color: var(--background);
 	opacity: 80%;
+}
+.below-search {
+    left:0;
+    right: 0;
+    margin-top: 50px;
+    
 }
 .body{
 	margin-top: 62px;
@@ -97,6 +112,25 @@ h3{
 .card a:hover{
 	color: black;
 	opacity: 50%;
+}
+.card-body {
+    align-items: center;
+}
+
+.card-body h5 {
+    text-align: center;
+}
+
+.card-body p {
+    margin-bottom: 0;
+    text-align: center;
+}
+.col img {
+    border-radius: 50%;
+    width: 100px;
+    height: auto;
+    margin-top: 30px;
+    align-self: center;
 }
 .content{
 	background-color: #2F2F2F;
@@ -225,6 +259,37 @@ h3{
 	padding-left: 20px;
 	font-size: 50px;
 }
+.filter-area {
+    float: left;
+    width: 25%;
+    height: 100%;
+    /* padding: 150px 50px; */
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    top: 0;
+    bottom: 0;
+}
+
+.filter-header {
+    top:0;
+    left:0;
+    right: 0;
+    background: #2f2f2f;
+    width:372.5px;
+    height: 50px;
+}
+
+.filter-header h3 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    text-align: center;
+    line-height: 50px;
+    color: #FFFFFF;
+}
+
 .forgot-btn{
 	padding-top: 20px;
 	text-align: right;
@@ -233,6 +298,9 @@ h3{
 }
 .forgot-btn:hover{
 	opacity: 50%;
+}
+.form-check {
+    margin-left: 20px;
 }
 .form-switch{
 	float: right;
@@ -309,6 +377,10 @@ h3{
 	height: 30px;
 	margin-right: 12px;
 }
+.input-group {
+    width: 1028px;
+    margin:auto;
+}
 .input-remember{
 	font-size: 25px;
 	display: flex;
@@ -372,6 +444,18 @@ h3{
 .negative, .positive, .zero{
 	display: inline;
 }
+.personal-info {
+    padding: 50px;
+    border-style: solid;
+    border-color:#2f2f2f;
+    border-width: 2px;
+    border-radius: 25px;
+}
+.personal-info p {
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
 .pop-up-hr{
 	margin: 18px 0 0;
 }
@@ -380,6 +464,10 @@ h3{
 }
 .positive{
 	color: var(--green);
+}
+.prof-name {
+    text-align: center;
+    margin-top: 20px;
 }
 .profile-drop-down{
 	position: fixed;
@@ -396,6 +484,7 @@ h3{
 	height: 360px;
 	border-radius: 360px;	
 }
+
 .right-sign-up{
 	display: flex;
 	padding: 0 250px 0;
@@ -407,6 +496,10 @@ h3{
 	margin: 30px;
 	padding: 13px;
 	border-radius: 5px;
+}
+.row.row-cols-1.row-cols-md-3.g-4{
+    padding-left: 50px;
+    padding-right: 50px;
 }
 .save{
 	color: var(--white);
@@ -422,6 +515,19 @@ h3{
 	background-color: var(--white);
 	border-color: var(--green);
 }
+.search-area {
+    padding-top: 100px;
+
+}
+.search-bar{
+    display: flex;
+    align-self: center;
+    align-items: center;
+}
+.side-desc-area {
+    float: left;
+    padding: 150px 50px;
+}
 .sign-up-bio{
 	width: 300px;
 	height: 5rem;
@@ -435,6 +541,46 @@ h3{
 .sign-up-password{
 	width:  50%;
 }
+.subjects-container {
+    background-color:#dadada;
+    border-radius: 25px;
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 50px;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+}
+.subject-item {
+    background-color: #FFFFFF;
+    align-items: center;
+    height: min-content;
+    padding: 2px;
+    border-radius: 3px;
+}
+.subject-item p {
+    margin: auto;
+    color: #aaa;
+    font-size:small;
+    font-family: 'Inder' sans-serif;
+}
+.star-row {
+    display: flex;
+    width: 200px;
+    justify-content: center;
+    height: 60px;
+    padding-bottom: 0;
+  }
+.star-column {
+    flex: 0 1 50px;
+    padding: 0px;
+    padding-bottom: 0px;
+}
+.star-column img {
+	margin-left: 5px;
+	margin-top: 20px;
+}
 .up-vote:hover{
 	color: var(--green);
 }
@@ -444,3 +590,53 @@ h3{
 .zero{
 	color: var(--neutral);
 }
+
+
+
+
+
+
+
+
+
+
+/* .collapse {
+    display: none;
+}
+
+.collapse.show {
+    display: block;
+}
+
+.collapsing {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    transition: height .35s ease;
+} */
+
+
+
+/* Professor Profile / Description Styles */
+
+/* .container-subjects h4{
+    margin: 58px auto 20px;
+    color: #000;
+    font-weight: 200;
+    font-size: 30px;
+}
+
+.subjects-box {
+    border-radius: 20px;
+    background-color:#dadada;
+    height: 200px;
+    padding-top: 15px;
+}
+
+.subject-oval {
+   margin-left: 20px;
+} */
+
+
+
+
