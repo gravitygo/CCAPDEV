@@ -24,6 +24,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Add Professor</title>
+
+    <style>
+        .btn-editavatar {
+                margin: 20px;
+                font-size: 30px;
+            }
+/*        @media (max-width: 1200px) {
+            .column-add-prof-picture {
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                position: absolute;
+                left: 0;
+                right: 0;
+                height: 500px;
+                width: 500px;
+                padding: 50px 5px;
+                text-align: center;
+            }
+            
+            .column-add-prof-details {
+                top: 20;
+                bottom: 0;
+                margin: auto;
+                margin-top: 5px;
+                position: absolute;
+                left: 0;
+                right: 0;
+                height: 100px;
+                width: 500px;
+                text-align: center;
+            }
+        }*/
+    </style>
 </head>
 
 <body>
@@ -51,12 +85,12 @@
     <div class="profile-drop-down hidden">
         <div class="card " style="width: 18rem; ">
             <ul class="list-group list-group-flush ">
-                <li class="list-group-item ">
-                    <label><i class="popup-icon fa-solid fa-moon "></i>Dark Mode</label>
-                    <div class="form-check form-switch ">
-                        <input class="form-check-input " id="dark-mode " type="checkbox ">
+                <li class="list-group-item">
+                    <label><i class="popup-icon fa-solid fa-moon"></i>Dark Mode</label>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" id="dark-mode" type="checkbox">
                     </div>
-                    <hr class="pop-up-hr ">
+                    <hr class="pop-up-hr">
                 </li>
                 <li class="list-group-item "><a href="editProfile.html "><i class="popup-icon fa-solid fa-pen-to-square "></i>Edit Profile</a></li>
                 <li class="list-group-item "><a href="addProf.html "><i class="popup-icon fa-solid fa-plus "></i>Add Professor</a></li>
@@ -66,80 +100,55 @@
     </div>
 
     <!-- Body -->
-    <div class="add-prof-title ">
-        <h2> Add Professor </h2>
-    </div>
+    <div class="body">
+        
 
-    <div class="column-add-prof-picture ">
-        <div class="container-addprof-avatar ">
-            <img src="assets/default.jpg " class="pic-profile " alt="Avatar ">
+        <div class="column-addprof-picture">
+            <div class="container-addprof-avatar">
+                <img src="assets/default.jpg" class="pic-profile" alt="Avatar">
 
-            <div class="container-addprof-upload ">
-                <button class="btn-editavatar " role="button ">Upload</button>
+                <div class="container-addprof-upload">
+                    <button class="btn-green btn-editavatar" role="button" >Upload</button>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="column-add-prof-details ">
-        <form action="/action_page.php ">
-            <input class="addprof-text " type=" text " id="fname " name="fname " placeholder="First Name "><br><br>
-            <input class="addprof-text " type="text " id="lname " name="lname " placeholder="Last Name "><br><br>
-            <input class="addprof-text " type="text " id="school " name="school " placeholder="School "><br><br>
-            <select class="select-dept " id="department " name="department ">
-			<option value="hidden " disabled selected>Department</option>	
-            <option value="CCS ">College of Computer Studies</option>
-            <option value="COS ">College of Science</option>
-            <option value="COB ">College of Business</option>
-            <option value="GCOE ">Gokongwei College of Engineering</option>
-			</select>
-            <br><br>
-            <label> Subjects: </label>
-            <br>
-            <select class="select-dept " name="subjects[] " id="subjects " multiple="multiple " style="height:150px ">
-                <option value="CCPROG1 ">CCPROG1</option>
-                <option value="CCPROG2 ">CCPROG2</option>
-                <option value="CCPROG3 ">CCPROG3</option>
-                <option value="ITNET ">ITNET</option>
-                <option value="CCAPDEV ">CCAPDEV</option>
-                <option value="CALENG1 ">CALENG1</option>
+        <div class="column-addprof-details">
+            <div class="add-prof-title">
+            <h2> Add Professor </h2>
+        </div>
+            <form>
+                <input class="addprof-text" type=" text " id="fname " name="fname " placeholder="First Name "><br><br>
+                <input class="addprof-text" type="text " id="lname " name="lname " placeholder="Last Name "><br><br>
+                <input class="addprof-text" type="text " id="school " name="school " placeholder="School "><br><br>
+                <select class="select-dept" id="department " name="department ">
+                <option value="hidden " disabled selected>Department</option>   
+                <option value="CCS ">College of Computer Studies</option>
+                <option value="COS ">College of Science</option>
+                <option value="COB ">College of Business</option>
+                <option value="GCOE ">Gokongwei College of Engineering</option>
                 </select>
-            <br><br>
-            <input class="submit-button " type="submit " value="Submit ">
-            <button class="cancel-button " role="button ">Cancel</button>
-        </form>
+                <br><br>
+                <label> Subjects: </label>
+                <br>
+                <select class="select-dept " name="subjects[] " id="subjects " multiple="multiple " style="height:150px ">
+                    <option value="CCPROG1 ">CCPROG1</option>
+                    <option value="CCPROG2 ">CCPROG2</option>
+                    <option value="CCPROG3 ">CCPROG3</option>
+                    <option value="ITNET ">ITNET</option>
+                    <option value="CCAPDEV ">CCAPDEV</option>
+                    <option value="CALENG1 ">CALENG1</option>
+                    </select>
+                <br><br>
+                <input class="submit-button" type="submit" value="Submit ">
+                <input class="cancel-button" type="submit" formAction="entry.html" value="Cancel">
+            </form>
+            
+        </div>
     </div>
+    
 </body>
+<script type="text/javascript" src="js/index.js"></script>
 
 </html>
 
-<style>
-    @media (max-width: 1200px) {
-        .column-add-prof-picture {
-            top: 0;
-            bottom: 0;
-            margin: auto;
-            position: absolute;
-            left: 0;
-            right: 0;
-            height: 500px;
-            width: 500px;
-            padding: 50px 5px;
-            text-align: center;
-        }
-        .btn-editavatar {
-            margin-left: 0px;
-        }
-        .column-add-prof-details {
-            top: 20;
-            bottom: 0;
-            margin: auto;
-            margin-top: 5px;
-            position: absolute;
-            left: 0;
-            right: 0;
-            height: 100px;
-            width: 500px;
-            text-align: center;
-        }
-    }
-</style>
