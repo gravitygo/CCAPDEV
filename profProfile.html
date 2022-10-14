@@ -23,6 +23,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<title>Professor John Doe</title>
+
 </head>
 <body>
 	<!-- Header -->
@@ -65,33 +66,49 @@
 
 	<!-- code here -->
 
-    <!-- <div class="column-profile">
-        <div class="cotainer-avatar">
-            <img src="assets/default.jpg" class="pic-profile" alt="Avatar">
-        </div>
-        <div class="container-subjects">
-            <h4>Subjects</h4>
-			<div class="subjects-box overflow-auto">
-				<div class="subject-oval"> <p>CCPROG1</p> </div>
-				<div class="subject-oval"> <p>CCPROG1</p> </div>
-				<div class="subject-oval"> <p>CCPROG1</p> </div>
-				<div class="subject-oval"> <p>CCPROG1</p> </div>
-				<div class="subject-oval"> <p>CCPROG1</p> </div>
-				<div class="subject-oval"> <p>CCPROG1</p> </div>
-				<div class="subject-oval"> <p>CCPROG1</p> </div>
-				<div class="subject-oval"> <p>CCPROG1</p> </div>
-			</div>
-           </div>
-    </div> -->
-
-	<div class="side-desc-area">
+	<div class="side-prof-area">
 		<div class="personal-info">
 			<div class="avatar-img">
-				<img src="assets/default.jpg" alt="Avatar">
+				<img src="assets/prof-stuart-justin.jpg" alt="Avatar">
 			</div>
-			<h3 class="prof-name">John Doe</h3>
-			<p>School</p>
-			<p>Department</p>
+			<h3 class="prof-name">Stuart Justin</h3>
+			<p>De La Salle University</p>
+			<p>CCS Department</p>
+			<div class="professor-stars star-row">
+				
+				<div class="star-column">
+				  <img src="assets\filled-star.png" alt="filled star" style="width:50%">
+				</div>
+				<div class="star-column">
+				  <img src="assets\filled-star.png" alt="filled star" style="width:50%">
+				</div>
+				<div class="star-column">
+				  <img src="assets\filled-star.png" alt="filled star" style="width:50%">
+				</div>
+				<div class="star-column">
+					<img src="assets\filled-star.png" alt="filled star" style="width:50%">
+				</div>
+				<div class="star-column">
+					<img src="assets\unfilled-star.png" alt="unfilled star" style="width:50%">
+				</div>
+			  </div>
+			  <div class="profProfile-vote">
+				<p class="vote positive">1</p>
+				<a onclick="upVote(this)"><i class="fa-solid fa-chevron-up up-vote up-vote-select"></i></a>
+				<a onclick="downVote(this)"><i class="fa-solid fa-chevron-down down-vote"></i></a>
+			</div>
+
+			<div class="container-real-subjects">
+				<h4>Subjects</h4>
+				<div class="real-subjects-box overflow-auto">
+					<div class="real-subject-oval"> <p>CCPROG1</p> </div>
+					<div class="real-subject-oval"> <p>CSINTSY</p> </div>
+					<div class="real-subject-oval"> <p>CCAPDEV</p> </div>
+					<div class="real-subject-oval"> <p>CSMATH2</p> </div>
+					<div class="real-subject-oval"> <p>MTH101A</p> </div>
+					<div class="real-subject-oval"> <p>CCDSALG</p> </div>
+				</div>
+			   </div>
 		</div>
 		
 	</div>
@@ -100,32 +117,118 @@
         <div class="divider-vertical"></div>
     </div>
 
-    <div class="column-profile-main">
-        <div class="containter-main">
-            <h3> John Doe! </h3>
-            <hr class="divider-horizontal">
-            <p class="profile-main"> De La Salle University </p>
-            <p class="profile-main"> Bachelor of Science in Information Technology </p>
-            <p class="profile-main"> Third Year </p>
-            <hr class="divider-horizontal">
-            <h3> Reviews (3) </h3>
-            <div class="column-profile-review">
-                <div class="card">
-                    <img src="assets/review-sample.jpg" class="review-sample" alt="Avatar">
-                </div>
-            </div>
-            <div class="column-profile-review">
-                <div class="card">
-                    <img src="assets/review-sample.jpg" class="review-sample" alt="Avatar">
-                </div>
-            </div>
-            <div class="column-profile-review">
-                <div class="card">
-                    <img src="assets/review-sample.jpg" class="review-sample" alt="Avatar">
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="profProfile-content">
+		<div class="container-reviews">
+            <h4>Reviews</h4>
+			<div class="reviews-box overflow-auto">
+				<div class="review-oval"> 
+					<h5>emily_saule888</h5>
+					<p>He was an outstanding teacher and one who influenced me far beyond the classroom. He is always willing to go above and beyond to help inside and outside of the classroom.</p> 
+					
+					<div class="container-starVote">
+						<div class="star-rev star-row">
+							<div class="star-column"> <img src="assets\filled-star.png" alt="filled star" style="width:50%"> </div>
+							<div class="star-column"> <img src="assets\filled-star.png" alt="filled star" style="width:50%"> </div>
+							<div class="star-column"> <img src="assets\filled-star.png" alt="filled star" style="width:50%"> </div>
+							<div class="star-column"> <img src="assets\unfilled-star.png" alt="filled star" style="width:50%"> </div>
+							<div class="star-column"> <img src="assets\unfilled-star.png" alt="unfilled star" style="width:50%"> </div>
+						</div>
+						<div class="review-vote">
+							<p class="vote positive">1</p>
+							<a onclick="upVote(this)"><i class="fa-solid fa-chevron-up up-vote up-vote-select"></i></a>
+							<a onclick="downVote(this)"><i class="fa-solid fa-chevron-down down-vote"></i></a>
+						</div>
+					</div>
+					
+				</div>
+				<div class="review-oval"> 
+					<h5>123loreto_lungile</h5>
+					<p>Sir Stuart is a great teacher, very easy to understand and follow in the classroom setting.</p> 
+					<div class="container-starVote">
+						<div class="star-rev star-row">
+							<div class="star-column"> <img src="assets\filled-star.png" alt="filled star" style="width:50%"> </div>
+							<div class="star-column"> <img src="assets\filled-star.png" alt="filled star" style="width:50%"> </div>
+							<div class="star-column"> <img src="assets\filled-star.png" alt="filled star" style="width:50%"> </div>
+							<div class="star-column"> <img src="assets\filled-star.png" alt="filled star" style="width:50%"> </div>
+							<div class="star-column"> <img src="assets\unfilled-star.png" alt="unfilled star" style="width:50%"> </div>
+						</div>
+						<div class="review-vote">
+							<p class="vote positive">1</p>
+							<a onclick="upVote(this)"><i class="fa-solid fa-chevron-up up-vote up-vote-select"></i></a>
+							<a onclick="downVote(this)"><i class="fa-solid fa-chevron-down down-vote"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="review-oval"> 
+					<h5>nelly_brice532</h5>
+					<p>He is supper approachable. He will help and attend to you if you needed something. He is a great teacher that cares about his students.</p> 
+					<div class="container-starVote">
+						<div class="star-rev star-row">
+							<div class="star-column"> <img src="assets\filled-star.png" alt="filled star" style="width:50%"> </div>
+							<div class="star-column"> <img src="assets\filled-star.png" alt="filled star" style="width:50%"> </div>
+							<div class="star-column"> <img src="assets\filled-star.png" alt="filled star" style="width:50%"> </div>
+							<div class="star-column"> <img src="assets\filled-star.png" alt="filled star" style="width:50%"> </div>
+							<div class="star-column"> <img src="assets\filled-star.png" alt="unfilled star" style="width:50%"> </div>
+						</div>
+						<div class="review-vote">
+							<p class="vote positive">1</p>
+							<a onclick="upVote(this)"><i class="fa-solid fa-chevron-up up-vote up-vote-select"></i></a>
+							<a onclick="downVote(this)"><i class="fa-solid fa-chevron-down down-vote"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="review-oval"> 
+					<h5>12mario_rosana34</h5>
+					<p>Sir Stuart is really good. He makes video tutorials for each lesson and they're really helpful because he explains them rlly well.</p> 
+					<div class="container-starVote">
+						<div class="star-rev star-row">
+							<div class="star-column"> <img src="assets\filled-star.png" alt="filled star" style="width:50%"> </div>
+							<div class="star-column"> <img src="assets\filled-star.png" alt="filled star" style="width:50%"> </div>
+							<div class="star-column"> <img src="assets\filled-star.png" alt="filled star" style="width:50%"> </div>
+							<div class="star-column"> <img src="assets\filled-star.png" alt="filled star" style="width:50%"> </div>
+							<div class="star-column"> <img src="assets\unfilled-star.png" alt="unfilled star" style="width:50%"> </div>
+						</div>
+						<div class="review-vote">
+							<p class="vote positive">1</p>
+							<a onclick="upVote(this)"><i class="fa-solid fa-chevron-up up-vote up-vote-select"></i></a>
+							<a onclick="downVote(this)"><i class="fa-solid fa-chevron-down down-vote"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="review-oval"> 
+					<h5>stella_noemi0128</h5>
+					<p>He's a great prof! He teaches well and have very detailed discussions.</p> 
+					<div class="container-starVote">
+						<div class="star-rev star-row">
+							<div class="star-column"> <img src="assets\filled-star.png" alt="filled star" style="width:50%"> </div>
+							<div class="star-column"> <img src="assets\filled-star.png" alt="filled star" style="width:50%"> </div>
+							<div class="star-column"> <img src="assets\unfilled-star.png" alt="filled star" style="width:50%"> </div>
+							<div class="star-column"> <img src="assets\unfilled-star.png" alt="filled star" style="width:50%"> </div>
+							<div class="star-column"> <img src="assets\unfilled-star.png" alt="unfilled star" style="width:50%"> </div>
+						</div>
+						<div class="review-vote">
+							<p class="vote positive">1</p>
+							<a onclick="upVote(this)"><i class="fa-solid fa-chevron-up up-vote up-vote-select"></i></a>
+							<a onclick="downVote(this)"><i class="fa-solid fa-chevron-down down-vote"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+           </div>
+
+		   
+	</div>
+
+	<div class="profProfile-comment">
+		<form>
+			<div class="form-group">
+				<label for="exampleFormControlTextarea1" class="comment-label">Comment Section</label>
+				<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Place comment/review here"></textarea>
+			  </div>
+			  <button type="submit" class="button-comment btn btn-success mb-2">Submit</button>
+		</form>
+   </div>
+
 
 </body>
 <script type="text/javascript" src="js/index.js"></script>
