@@ -16,7 +16,6 @@ function profileRemove(){
 	$(".profile-drop-down").addClass("hidden");
 	$(".navbar-brand").attr("onclick","profilePopUp()");
 }
-
 function menuPopUp(elem){
 	var elems = elem.parentElement.querySelector(".entry-burger");
 	var jelem = $(elems);
