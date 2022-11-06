@@ -1,154 +1,136 @@
+<!-- done -->
 <!DOCTYPE html>
 <html>
-
-<head>
-    <!--Bootstrap 5-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
-    <!--Google font-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inder&display=swap" rel="stylesheet">
-
-    <!--jQuery-->
-    <script src="js/jquery-3.6.1.min.js"></script>
-
-    <!--font awesome-->
-    <script src="https://kit.fontawesome.com/f3347210b3.js" crossorigin="anonymous"></script>
-
-    <!--Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="css/index.css">
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Add Professor</title>
-
-    <style>
-        .btn-editavatar {
-                margin: 20px;
-                font-size: 30px;
-            }
-/*        @media (max-width: 1200px) {
-            .column-add-prof-picture {
-                top: 0;
-                bottom: 0;
-                margin: auto;
-                position: absolute;
-                left: 0;
-                right: 0;
-                height: 500px;
-                width: 500px;
-                padding: 50px 5px;
-                text-align: center;
-            }
-            
-            .column-add-prof-details {
-                top: 20;
-                bottom: 0;
-                margin: auto;
-                margin-top: 5px;
-                position: absolute;
-                left: 0;
-                right: 0;
-                height: 100px;
-                width: 500px;
-                text-align: center;
-            }
-        }*/
-    </style>
-</head>
-
-<body>
-    <!-- Header -->
-    <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark ">
-        <div class="container-fluid ">
-            <a class="navbar-brand " href="# ">PROFESSORS TO PICK</a>
-        </div>
-
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-            <li class="nav-item ">
-                <a class="nav-link " aria-current="page " href="entry.html ">Home</a>
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link " href="editProfile.html ">Profile</a>
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link active " href="catalog.html ">Catalog</a>
-            </li>
-            <li class="nav-item ">
-                <a class="navbar-brand " onclick="profilePopUp() "><img class="nav-profile " src="assets/default.jpg "></a>
-            </li>
-        </ul>
-    </nav>
-    <div class="profile-drop-down hidden">
-        <div class="card " style="width: 18rem; ">
-            <ul class="list-group list-group-flush ">
-                <li class="list-group-item">
-                    <label><i class="popup-icon fa-solid fa-moon"></i>Dark Mode</label>
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" id="dark-mode" type="checkbox">
-                    </div>
-                    <hr class="pop-up-hr">
-                </li>
-                <li class="list-group-item "><a href="editProfile.html "><i class="popup-icon fa-solid fa-pen-to-square "></i>Edit Profile</a></li>
-                <li class="list-group-item "><a href="addProf.html "><i class="popup-icon fa-solid fa-plus "></i>Add Professor</a></li>
-                <li class="list-group-item "><a href="index.html "><i class="popup-icon fa-solid fa-right-from-bracket "></i>Log Out</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- Body -->
-    <div class="body">
-        
-
-        <div class="column-addprof-picture">
-            <div class="container-addprof-avatar">
-                <img src="assets/default.jpg" class="pic-profile" alt="Avatar">
-
-                <div class="container-addprof-upload">
-                    <button class="btn-green btn-editavatar" role="button" >Upload</button>
-                </div>
+    <head>
+        <!--Bootstrap 5-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <!--Google font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inder&display=swap" rel="stylesheet">
+        <!--jQuery-->
+        <script src="js/jquery-3.6.1.min.js"></script>
+        <!--font awesome-->
+        <script src="https://kit.fontawesome.com/f3347210b3.js" crossorigin="anonymous"></script>
+        <!--Custom CSS-->
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Add Professor</title>
+    </head>
+    <body class="background-content bg-white">
+        <!-- Header -->
+        <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">PROFESSORS TO PICK</a>
             </div>
-        </div>
-
-        <div class="column-addprof-details">
-            <div class="add-prof-title">
-            <h2> Add Professor </h2>
-        </div>
-            <form>
-                <input class="addprof-text" type=" text " id="fname " name="fname " placeholder="First Name "><br><br>
-                <input class="addprof-text" type="text " id="lname " name="lname " placeholder="Last Name "><br><br>
-                <input class="addprof-text" type="text " id="school " name="school " placeholder="School "><br><br>
-                <select class="select-dept" id="department " name="department ">
-                <option value="hidden " disabled selected>Department</option>   
-                <option value="CCS ">College of Computer Studies</option>
-                <option value="COS ">College of Science</option>
-                <option value="COB ">College of Business</option>
-                <option value="GCOE ">Gokongwei College of Engineering</option>
-                </select>
-                <br><br>
-                <label> Subjects: </label>
-                <br>
-                <select class="select-dept " name="subjects[] " id="subjects " multiple="multiple " style="height:150px ">
-                    <option value="CCPROG1 ">CCPROG1</option>
-                    <option value="CCPROG2 ">CCPROG2</option>
-                    <option value="CCPROG3 ">CCPROG3</option>
-                    <option value="ITNET ">ITNET</option>
-                    <option value="CCAPDEV ">CCAPDEV</option>
-                    <option value="CALENG1 ">CALENG1</option>
-                    </select>
-                <br><br>
-                <input class="submit-button" type="submit" value="Submit ">
-                <input class="cancel-button" type="submit" formAction="entry.html" value="Cancel">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                <li class="nav-item">
+                    <a class="nav-link" href="entry.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="profile.html ">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="catalog.html ">Catalog</a>
+                </li>
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <a class="navbar-brand" data-bs-toggle="dropdown" data-bs-display="static"><img class="nav-profile" src="assets/default.jpg "></a>
+                        <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" data-bs-popper="static" style="width: 15rem;">
+                            <li>
+                                <div class="dropdown-item">
+                                    
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" id="dark-mode" type="checkbox">
+                                    </div>
+                                    <label for="dark-mode"><i class="popup-icon fa-solid fa-moon"></i>Dark Mode</label>
+                                </div>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item" href="editProfile.html "><i class="popup-icon fa-solid fa-pen-to-square "></i>Edit Profile</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="addProf.html "><i class="popup-icon fa-solid fa-plus "></i>Add Professor</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="index.html "><i class="popup-icon fa-solid fa-right-from-bracket "></i>Log Out</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <!-- Body -->
+        <div class="align-items-center d-flex justify-content-center vh-100">
+            <form class="container bg-green rounded bg-green">
+                <div class="row">
+                    <div class="col-8 bg-background rounded p-5">
+                        <div class="row">
+                            <h3 class="color-white">Add Professor</h3>
+                        </div>
+                        <div class="row">
+                            <hr>
+                        </div>
+                        <div class="row">
+                            <input class="form-control w-100" style="min-width: 0;" type="text" id="fname" name="fname" placeholder="First Name">
+                        </div>
+                        <div class="row">
+                            <input class="form-control w-100" style="min-width: 0;" type="text" id="lname" name="lname" placeholder="Last Name">
+                        </div>
+                        <div class="row">
+                            <input class="form-control w-100" style="min-width: 0;" type="text" id="school" name="school" placeholder="School">
+                        </div>
+                        <div class="row">
+                            <select class="form-control w-100" style="min-width: 0;" id="department" name="department">
+                                <option value="hidden" disabled selected>Department</option>
+                                <option value="CCS">College of Computer Studies</option>
+                                <option value="COS">College of Science</option>
+                                <option value="COB">College of Business</option>
+                                <option value="GCOE">Gokongwei College of Engineering</option>
+                            </select>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <label class="color-white"> Subjects: </label>
+                            <select class="form-control w-100" style="min-width: 0;" name="subjects[]" id="subjects" multiple="multiple" >
+                                <option value="CCPROG1">CCPROG1</option>
+                                <option value="CCPROG2">CCPROG2</option>
+                                <option value="CCPROG3">CCPROG3</option>
+                                <option value="ITNET01">ITNET01</option>
+                                <option value="CCAPDEV">CCAPDEV</option>
+                                <option value="CALENG1">CALENG1</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col p-5 d-flex flex-column text-center ">
+                        <div class="row mt-5">
+                            <div class="col">
+                                <label class="color-white pb-3" for="uploadImage"><h5>Picture</h5></label>
+                                <div class="img-form" style="left: calc(50% - 100px);">
+                                    <img id="uploadPreview" src="assets/default.jpg" />
+                                    <input id="uploadImage" type="file" name="myPhoto" onchange="imagePreview();"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-auto">
+                                <div class="row m-3"> 
+                                    <input class="btn-success btn w-100 p-3 rounded-pill" type="submit" value="Submit">
+                                </div>
+                                <div class="row  m-3 ">
+                                    <input class="btn btn-danger p-3 rounded-pill" type="submit" formAction="entry.html" value="Cancel">
+                                </div>    
+                        </div>
+                        
+                    </div>
+                </div>
             </form>
-            
         </div>
     </div>
-    
+</div>
+
 </body>
 <script type="text/javascript" src="js/index.js"></script>
-
 </html>
-

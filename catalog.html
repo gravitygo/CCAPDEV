@@ -1,431 +1,382 @@
+<!-- done -->
 <!DOCTYPE html>
 <html>
-<head>
-	<!--Bootstrap 5-->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
-	<!--Google font-->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Inder&display=swap" rel="stylesheet">
-
-	<!--jQuery-->
-	<script src="js/jquery-3.6.1.min.js"></script>
-
-	<!--font awesome-->
-	<script src="https://kit.fontawesome.com/f3347210b3.js" crossorigin="anonymous"></script>
-
-	<!--Custom CSS-->
-	<link rel="stylesheet" type="text/css" href="css/index.css">
-
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Catalog</title>
-</head>
-<body>
-	<!-- Header -->
-	<nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
-		<div class="container-fluid">
-			<a class="navbar-brand" href="#">PROFESSORS TO PICK</a>
-		</div>
-		
-    	<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-    	  <li class="nav-item">
-    	    <a class="nav-link" aria-current="page" href="entry.html">Home</a>
-    	  </li>
-    	  <li class="nav-item">
-    	    <a class="nav-link" href="editProfile.html">Profile</a>
-    	  </li>
-    	  <li class="nav-item">
-    	    <a class="nav-link active" href="catalog.html">Catalog</a>
-    	  </li>
-    	  <li class="nav-item">
-    	    <a class="navbar-brand" onclick="profilePopUp()"><img class="nav-profile" src="assets/default.jpg"></a>
-    	  </li>
-    	</ul>
-	</nav>
-	<div class="profile-drop-down hidden">
-		<div class="card" style="width: 18rem;">
-		  <ul class="list-group list-group-flush">
-		    <li class="list-group-item">
-		    	<label><i class="popup-icon fa-solid fa-moon"></i>Dark Mode</label>
-		    	<div class="form-check form-switch">
-				  <input class="form-check-input" id="dark-mode" type="checkbox">
-				</div>
-				<hr class="pop-up-hr">
-			</li>
-		    <li class="list-group-item"><a href="editProfile.html"><i class="popup-icon fa-solid fa-pen-to-square"></i>Edit Profile</a></li>
-		    <li class="list-group-item"><a href="addProf.html"><i class="popup-icon fa-solid fa-plus"></i>Add Professor</a></li>
-		    <li class="list-group-item"><a href="index.html"><i class="popup-icon fa-solid fa-right-from-bracket"></i>Log Out</a></li>
-		  </ul>
-		</div>
-	</div>
-
-
-	<div class="search-area">
-		<div class="search-bar">
-			<div class="input-group">
-				<input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
-				<div class="input-group-append">
-				  <button class="btn btn-outline-secondary" type="button"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
-				</div>
+	<head>
+		<!--Bootstrap 5-->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+		<!--Google font-->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inder&display=swap" rel="stylesheet">
+		<!--jQuery-->
+		<script src="js/jquery-3.6.1.min.js"></script>
+		<!--font awesome-->
+		<script src="https://kit.fontawesome.com/f3347210b3.js" crossorigin="anonymous"></script>
+		<!--Custom CSS-->
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Catalog</title>
+	</head>
+	<body>
+		<!-- Header -->
+        <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">PROFESSORS TO PICK</a>
+            </div>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                <li class="nav-item">
+                    <a class="nav-link" href="entry.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="profile.html ">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="catalog.html ">Catalog</a>
+                </li>
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <a class="navbar-brand" data-bs-toggle="dropdown" data-bs-display="static"><img class="nav-profile" src="assets/default.jpg "></a>
+                        <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" data-bs-popper="static" style="width: 15rem;">
+                            <li>
+                                <div class="dropdown-item">
+                                    
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" id="dark-mode" type="checkbox">
+                                    </div>
+                                    <label for="dark-mode"><i class="popup-icon fa-solid fa-moon"></i>Dark Mode</label>
+                                </div>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item" href="editProfile.html "><i class="popup-icon fa-solid fa-pen-to-square "></i>Edit Profile</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="addProf.html "><i class="popup-icon fa-solid fa-plus "></i>Add Professor</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="index.html "><i class="popup-icon fa-solid fa-right-from-bracket "></i>Log Out</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+		<div class="body">
+			<!-- Search -->
+			<div class="container">
+				<form>
+					<div class="d-flex">
+						<input class="my-3 p-1 ps-3 vw-100" type="text" placeholder="Recipient's username">
+						<button class="btn btn-outline-secondary d-flex my-3 p-1" type="button">
+						<i class="my-auto me-1 fa-solid fa-magnifying-glass"></i>
+						Search
+						</button>
+					</div>
+				</form>
 			</div>
-		</div>
-	</div>
-
-	<hr class="below-search">
-
-	<div class="filter-area">
-		<div class="filter-header">
-			<h3>FILTERS</h3>
-		</div>
-
-		<div class="accordion" id="accordionPanelsStayOpenExample">
-			<div class="accordion-item">
-			  <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-				<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-				  School
-				</button>
-			  </h2>
-			  <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-				<div class="accordion-body">
-					<div class="form-check">
-						<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-						<label class="form-check-label" for="flexCheckDefault">
-							School A
-						</label>
-					  </div>
-					  <div class="form-check">
-						<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-						<label class="form-check-label" for="flexCheckChecked">
-							School B
-						</label>
-					  </div>
-					  <div class="form-check">
-						<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-						<label class="form-check-label" for="flexCheckDefault">
-							School C
-						</label>
-					  </div>
-					  <div class="form-check">
-						<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-						<label class="form-check-label" for="flexCheckChecked">
-							School D
-						</label>
-					  </div>
-				</div>  
+			<hr>
+			<!-- Filter -->
+			<div class="filter-area">
+				<div class="filter-header">
+					<h3>FILTERS</h3>
 				</div>
-			  </div>
-			</div>
-			<div class="accordion-item">
-			  <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+				<div class="accordion" id="accordionPanelsStayOpenExample">
+					<div class="accordion-item">
+						<h2 class="accordion-header" id="panelsStayOpen-headingOne">
+						<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne">
+						School
+						</button>
+						</h2>
+						<div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+							<div class="accordion-body">
+								<div class="form-check">
+									<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+									<label class="form-check-label" for="flexCheckDefault">
+										School A
+									</label>
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+									<label class="form-check-label" for="flexCheckChecked">
+										School B
+									</label>
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+									<label class="form-check-label" for="flexCheckDefault">
+										School C
+									</label>
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+									<label class="form-check-label" for="flexCheckChecked">
+										School D
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo">
 					Department
-				</button>
-			  </h2>
-			  <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
-				<div class="accordion-body">
-					<div class="form-check">
-						<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-						<label class="form-check-label" for="flexCheckDefault">
-							Department X
-						</label>
-					  </div>
-					  <div class="form-check">
-						<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-						<label class="form-check-label" for="flexCheckChecked">
-							Department Y
-						</label>
-					  </div>
-					  <div class="form-check">
-						<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-						<label class="form-check-label" for="flexCheckDefault">
-							Department Z
-						</label>
-					  </div>
+					</button>
+					</h2>
+					<div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+						<div class="accordion-body">
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+								<label class="form-check-label" for="flexCheckDefault">
+									Department X
+								</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+								<label class="form-check-label" for="flexCheckChecked">
+									Department Y
+								</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+								<label class="form-check-label" for="flexCheckDefault">
+									Department Z
+								</label>
+							</div>
+						</div>
+					</div>
 				</div>
-			  </div>
-			</div>
-			<div class="accordion-item">
-			  <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-				  Subject
-				</button>
-			  </h2>
-			  <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
-				<div class="accordion-body">
-					<div class="form-check">
-						<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-						<label class="form-check-label" for="flexCheckDefault">
-						  Subject I
-						</label>
-					  </div>
-					  <div class="form-check">
-						<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-						<label class="form-check-label" for="flexCheckChecked">
-							Subject J
-						</label>
-					  </div>
-					  <div class="form-check">
-						<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-						<label class="form-check-label" for="flexCheckDefault">
-							Subject K
-						</label>
-					  </div>  
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="panelsStayOpen-headingThree">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree">
+					Subject
+					</button>
+					</h2>
+					<div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+						<div class="accordion-body">
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+								<label class="form-check-label" for="flexCheckDefault">
+									Subject I
+								</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+								<label class="form-check-label" for="flexCheckChecked">
+									Subject J
+								</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+								<label class="form-check-label" for="flexCheckDefault">
+									Subject K
+								</label>
+							</div>
+						</div>
+					</div>
 				</div>
-			  </div>
-			</div>
-			<div class="accordion-item">
-				<h2 class="accordion-header" id="panelsStayOpen-headingFour">
-				  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="panelsStayOpen-headingFour">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour">
 					Rating
-				  </button>
-				</h2>
-				<div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
-				  <div class="accordion-body">
-					  <div class="form-check">
-						  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-						  <label class="form-check-label" for="flexCheckDefault">
-							1 Star Picture
-						  </label>
+					</button>
+					</h2>
+					<div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
+						<div class="accordion-body">
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+								<label class="form-check-label" for="flexCheckDefault">
+									<div class="star-row">
+										<span class="fa-stack">
+											<i class="fa-stack-1x fa-solid fa-star text-warning"></i>
+											<i class="fa-stack-1x fa-regular fa-star"></i>
+										</span>
+										<span class="fa-stack">
+											<i class="fa-stack-1x fa-regular fa-star"></i>
+										</span>
+										<span class="fa-stack">
+											<i class="fa-stack-1x fa-regular fa-star"></i>
+										</span>
+										<span class="fa-stack">
+											<i class="fa-stack-1x fa-regular fa-star"></i>
+										</span>
+										<span class="fa-stack">
+											<i class="fa-stack-1x fa-regular fa-star"></i>
+										</span>
+									</div>
+								</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+								<label class="form-check-label" for="flexCheckChecked">
+									<div class="star-row">
+										<span class="fa-stack">
+											<i class="fa-stack-1x fa-solid fa-star text-warning"></i>
+											<i class="fa-stack-1x fa-regular fa-star"></i>
+										</span>
+										<span class="fa-stack">
+											<i class="fa-stack-1x fa-solid fa-star text-warning"></i>
+											<i class="fa-stack-1x fa-regular fa-star"></i>
+										</span>
+										<span class="fa-stack">
+											<i class="fa-stack-1x fa-regular fa-star"></i>
+										</span>
+										<span class="fa-stack">
+											<i class="fa-stack-1x fa-regular fa-star"></i>
+										</span>
+										<span class="fa-stack">
+											<i class="fa-stack-1x fa-regular fa-star"></i>
+										</span>
+									</div>
+								</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+								<label class="form-check-label" for="flexCheckDefault">
+									<div class="star-row">
+										<span class="fa-stack">
+											<i class="fa-stack-1x fa-solid fa-star text-warning"></i>
+											<i class="fa-stack-1x fa-regular fa-star"></i>
+										</span>
+										<span class="fa-stack">
+											<i class="fa-stack-1x fa-solid fa-star text-warning"></i>
+											<i class="fa-stack-1x fa-regular fa-star"></i>
+										</span>
+										<span class="fa-stack">
+											<i class="fa-stack-1x fa-solid fa-star text-warning"></i>
+											<i class="fa-stack-1x fa-regular fa-star"></i>
+										</span>
+										<span class="fa-stack">
+											<i class="fa-stack-1x fa-regular fa-star"></i>
+										</span>
+										<span class="fa-stack">
+											<i class="fa-stack-1x fa-regular fa-star"></i>
+										</span>
+									</div>
+								</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+								<label class="form-check-label" for="flexCheckChecked">
+									<div class="star-row">
+										<span class="fa-stack">
+											<i class="fa-stack-1x fa-solid fa-star text-warning"></i>
+											<i class="fa-stack-1x fa-regular fa-star"></i>
+										</span>
+										<span class="fa-stack">
+											<i class="fa-stack-1x fa-solid fa-star text-warning"></i>
+											<i class="fa-stack-1x fa-regular fa-star"></i>
+										</span>
+										<span class="fa-stack">
+											<i class="fa-stack-1x fa-solid fa-star text-warning"></i>
+											<i class="fa-stack-1x fa-regular fa-star"></i>
+										</span>
+										<span class="fa-stack">
+											<i class="fa-stack-1x fa-solid fa-star text-warning"></i>
+											<i class="fa-stack-1x fa-regular fa-star"></i>
+										</span>
+										<span class="fa-stack">
+											<i class="fa-stack-1x fa-regular fa-star"></i>
+										</span>
+									</div>
+								</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+								<label class="form-check-label" for="flexCheckDefault">
+									<div class="star-row">
+										<span class="fa-stack">
+											<i class="fa-stack-1x fa-solid fa-star text-warning"></i>
+											<i class="fa-stack-1x fa-regular fa-star"></i>
+										</span>
+										<span class="fa-stack">
+											<i class="fa-stack-1x fa-solid fa-star text-warning"></i>
+											<i class="fa-stack-1x fa-regular fa-star"></i>
+										</span>
+										<span class="fa-stack">
+											<i class="fa-stack-1x fa-solid fa-star text-warning"></i>
+											<i class="fa-stack-1x fa-regular fa-star"></i>
+										</span>
+										<span class="fa-stack">
+											<i class="fa-stack-1x fa-solid fa-star text-warning"></i>
+											<i class="fa-stack-1x fa-regular fa-star"></i>
+										</span>
+										<span class="fa-stack">
+											<i class="fa-stack-1x fa-solid fa-star text-warning"></i>
+											<i class="fa-stack-1x fa-regular fa-star"></i>
+										</span>
+									</div>
+								</label>
+							</div>
 						</div>
-						<div class="form-check">
-						  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-						  <label class="form-check-label" for="flexCheckChecked">
-							2 Stars Picture
-						  </label>
-						</div>
-						<div class="form-check">
-						  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-						  <label class="form-check-label" for="flexCheckDefault">
-							3 Stars Picture
-						  </label>
-						</div>  
-						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-							<label class="form-check-label" for="flexCheckChecked">
-								4 Stars Picture
-							</label>
-						  </div>
-						  <div class="form-check">
-							<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-							<label class="form-check-label" for="flexCheckDefault">
-								5 Stars Picture
-							</label>
-						  </div> 
-				  </div>
-				</div>
-			  </div>
-		  </div>
-
-		  <div class="row row-cols-1 row-cols-md-3 g-4">
-			<div class="col">
-				<a href="profProfile.html">
-				<div class="card h-100">
-				  <img src="assets\default.jpg" class="card-img-top" alt="...">
-				  <div class="card-body">
-					<h5 class="card-title">Stuart Justin</h5>
-					<p class="card-text">De La Salle University</p>
-					<p class="card-text">CCS Department</p>
-					<div class="star-row">
-					  <div class="star-column">
-						<img src="assets\filled-star.png" alt="filled star" style="width:50%">
-					  </div>
-					  <div class="star-column">
-						<img src="assets\filled-star.png" alt="filled star" style="width:50%">
-					  </div>
-					  <div class="star-column">
-						<img src="assets\filled-star.png" alt="filled star" style="width:50%">
-					  </div>
-					  <div class="star-column">
-						  <img src="assets\unfilled-star.png" alt="unfilled-star" style="width:50%">
-					  </div>
-					  <div class="star-column">
-						  <img src="assets\unfilled-star.png" alt="unfilled star" style="width:50%">
-					  </div>
-					</div>
-					<div class="subjects-container">
-					  <div class="subject-item">
-						  <p>CCPROG1</p>
-					  </div>
-					  <div class="subject-item">
-						  <p>CSINTSY</p>
-					  </div>
-					  <div class="subject-item">
-						  <p>CCAPDEV</p>
-					  </div>
-					  <div class="subject-item">
-						  <p>CSMATH2</p>
-					  </div>
-					  <div class="subject-item">
-						  <p>MTH101A</p>
-					  </div>
-					  <div class="subject-item">
-						  <p>CCDSALG</p>
-					  </div>
-				  </div>
-				  </div>
-				</div>
-				</a>
-			  </div>
-			<div class="col">
-			  <div class="card h-100">
-				<img src="assets\default.jpg" class="card-img-top" alt="...">
-				<div class="card-body">
-				  <h5 class="card-title">John Doe</h5>
-				  <p class="card-text">De La Salle University</p>
-				  <p class="card-text">CCS Department</p>
-				  <div class="star-row">
-					<div class="star-column">
-					  <img src="assets\filled-star.png" alt="filled star" style="width:50%">
-					</div>
-					<div class="star-column">
-					  <img src="assets\filled-star.png" alt="filled star" style="width:50%">
-					</div>
-					<div class="star-column">
-					  <img src="assets\unfilled-star.png" alt="unfilled-star" style="width:50%">
-					</div>
-					<div class="star-column">
-						<img src="assets\unfilled-star.png" alt="unfilled-star" style="width:50%">
-					</div>
-					<div class="star-column">
-						<img src="assets\unfilled-star.png" alt="unfilled star" style="width:50%">
-					</div>
-				  </div>
-				  <div class="subjects-container">
-					<div class="subject-item">
-						<p>ITCMSY</p>
-					</div>
-					<div class="subject-item">
-						<p>ITNET01</p>
-					</div>
-					<div class="subject-item">
-						<p>ITNET02</p>
 					</div>
 				</div>
-				</div>
-			  </div>
 			</div>
-			<div class="col">
-				<div class="card h-100">
-				  <img src="assets\default.jpg" class="card-img-top" alt="...">
-				  <div class="card-body">
-					<h5 class="card-title">Jane Doe</h5>
-					<p class="card-text">De La Salle University</p>
-					<p class="card-text">CCS Department</p>
-					<div class="star-row">
-					  <div class="star-column">
-						<img src="assets\filled-star.png" alt="filled star" style="width:50%">
-					  </div>
-					  <div class="star-column">
-						<img src="assets\filled-star.png" alt="filled star" style="width:50%">
-					  </div>
-					  <div class="star-column">
-						<img src="assets\filled-star.png" alt="filled star" style="width:50%">
-					  </div>
-					  <div class="star-column">
-						  <img src="assets\filled-star.png" alt="filled star" style="width:50%">
-					  </div>
-					  <div class="star-column">
-						  <img src="assets\unfilled-star.png" alt="unfilled star" style="width:50%">
-					  </div>
-					</div>
-					<div class="subjects-container">
-					  <div class="subject-item">
-						  <p>CCPROG1</p>
-					  </div>
-					  <div class="subject-item">
-						  <p>CCPROG2</p>
-					  </div>
-					  <div class="subject-item">
-						  <p>CCDSALG</p>
-					  </div>
-				  </div>
-				  </div>
+			<div class="row row-cols-1 row-cols-md-3 g-4">
+				<div class="col">
+					<a href="profProfile.html">
+						<div class="card h-100 text-center">
+							<div class="card-header">
+								<img src="assets\default.jpg" class="card-img-top">
+								<h5 class="mt-2 card-title">Stuart Justin</h5>
+							</div>
+							
+							<div class="card-body">
+								
+								<p class="card-text">De La Salle University</p>
+								<p class="card-text">CCS Department</p>
+								<div class="star-row">
+									<span class="fa-stack">
+										<i class="fa-stack-1x fa-solid fa-star text-warning"></i>
+										<i class="fa-stack-1x fa-regular fa-star"></i>
+									</span>
+									<span class="fa-stack">
+										<i class="fa-stack-1x fa-solid fa-star text-warning"></i>
+										<i class="fa-stack-1x fa-regular fa-star"></i>
+									</span>
+									<span class="fa-stack">
+										<i class="fa-stack-1x fa-solid fa-star text-warning"></i>
+										<i class="fa-stack-1x fa-regular fa-star"></i>
+									</span>
+									<span class="fa-stack">
+										<i class="fa-stack-1x fa-regular fa-star"></i>
+									</span>
+									<span class="fa-stack">
+										<i class="fa-stack-1x fa-regular fa-star"></i>
+									</span>
+								</div>
+								<p class="card-text">Subjects</p>
+								<div class="subjects-container" id="scroller">
+									<div class="subject-item">
+										<p>CCPROG1</p>
+									</div>
+									<div class="subject-item">
+										<p>CSINTSY</p>
+									</div>
+									<div class="subject-item">
+										<p>CCAPDEV</p>
+									</div>
+									<div class="subject-item">
+										<p>CSMATH2</p>
+									</div>
+									<div class="subject-item">
+										<p>MTH101A</p>
+									</div>
+									<div class="subject-item">
+										<p>CCDSALG</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</a>
 				</div>
-			  </div>
-			  <div class="col">
-				<div class="card h-100">
-				  <img src="assets\default.jpg" class="card-img-top" alt="...">
-				  <div class="card-body">
-					<h5 class="card-title">Juan Dela Cruz</h5>
-					<p class="card-text">De La Salle University</p>
-					<p class="card-text">CCS Department</p>
-					<div class="star-row">
-					  <div class="star-column">
-						<img src="assets\filled-star.png" alt="filled star" style="width:50%">
-					  </div>
-					  <div class="star-column">
-						<img src="assets\filled-star.png" alt="filled star" style="width:50%">
-					  </div>
-					  <div class="star-column">
-						<img src="assets\filled-star.png" alt="filled star" style="width:50%">
-					  </div>
-					  <div class="star-column">
-						  <img src="assets\filled-star.png" alt="filled star" style="width:50%">
-					  </div>
-					  <div class="star-column">
-						  <img src="assets\filled-star.png" alt="filled star" style="width:50%">
-					  </div>
-					</div>
-					<div class="subjects-container">
-					  <div class="subject-item">
-						  <p>CCPROG1</p>
-					  </div>
-					  <div class="subject-item">
-						  <p>CCPROG2</p>
-					  </div>
-					  <div class="subject-item">
-						  <p>CCPROG3</p>
-					  </div>
-				  </div>
-				  </div>
-				</div>
-			  </div>
-			  <div class="col">
-				<div class="card h-100">
-				  <img src="assets\default.jpg" class="card-img-top" alt="...">
-				  <div class="card-body">
-					<h5 class="card-title">Jasmine Gonzales</h5>
-					<p class="card-text">De La Salle University</p>
-					<p class="card-text">CCS Department</p>
-					<div class="star-row">
-					  <div class="star-column">
-						<img src="assets\filled-star.png" alt="filled star" style="width:50%">
-					  </div>
-					  <div class="star-column">
-						<img src="assets\filled-star.png" alt="filled star" style="width:50%">
-					  </div>
-					  <div class="star-column">
-						<img src="assets\filled-star.png" alt="filled star" style="width:50%">
-					  </div>
-					  <div class="star-column">
-						  <img src="assets\filled-star.png" alt="filled star" style="width:50%">
-					  </div>
-					  <div class="star-column">
-						  <img src="assets\unfilled-star.png" alt="unfilled star" style="width:50%">
-					  </div>
-					</div>
-					<div class="subjects-container">
-					  <div class="subject-item">
-						  <p>CCPROG1</p>
-					  </div>
-					  <div class="subject-item">
-						  <p>CCPROG2</p>
-					  </div>
-					  <div class="subject-item">
-						  <p>CCPROG3</p>
-					  </div>
-				  </div>
-				  </div>
-				</div>
-			  </div>
-		  </div>
+			</div>
+		</div>
 	</div>
-
 	
-
+	
 </body>
 <script type="text/javascript" src="js/index.js"></script>
 </html>
