@@ -21,7 +21,7 @@ app.set('views',path.join(__dirname, '/Views'));
 global.globaluser={};
 
 app.get("/", (req, res) => {
-    var sql = "SELECT * FROM department";
+    var sql = "SELECT * FROM Department";
     con.query(sql, (error, department, fields) => {
         if (error) throw error;
         else{
@@ -35,15 +35,15 @@ app.get("/", (req, res) => {
 });
 
 app.get("/add_prof", (req, res) => {
-    var sql = "SELECT * FROM department";
+    var sql = "SELECT * FROM Department";
     con.query(sql, (error, department, fields) => {
         if (error) throw error;
         else {
-            sql = "SELECT * FROM subjects";
+            sql = "SELECT * FROM Subjects";
             con.query(sql, (error, subjects, fields) => {
                 if (error) throw error;
                 else {
-                    sql = "SELECT * FROM school";
+                    sql = "SELECT * FROM School";
                     con.query(sql, (error, school, fields) => {
                         if (error) throw error;
                         else{
@@ -65,7 +65,7 @@ app.get("/catalog", (req, res) => {
 });
 
 app.get("/edit", (req, res) => {
-    var sql = "SELECT e.*, concat(p.firstname, ' ', p.lastname) as full_name FROM entry e left join professors p on e.professor_id=p.professor_id where entry_id=" + req.query.entryid;
+    var sql = "SELECT e.*, concat(p.firstname, ' ', p.lastname) as full_name FROM Entry e left join Professors p on e.professor_id=p.professor_id where entry_id=" + req.query.entryid;
     con.query(sql, (error, results, fields) => {
         if (error) throw error;
         else {
@@ -84,11 +84,11 @@ app.get("/edit", (req, res) => {
 });
 
 app.get("/edit_profile", (req, res) => {
-    var sql = "SELECT * FROM user WHERE user_id=" + globaluser.user_id;
+    var sql = "SELECT * FROM User WHERE user_id=" + globaluser.user_id;
     con.query(sql, (error, results, fields) => {
         if (error) throw error;
         else {
-            sql = "SELECT * FROM school";
+            sql = "SELECT * FROM School";
             con.query(sql, (error, school, fields) => {
                 if (error) throw error;
                 else {
@@ -122,7 +122,7 @@ app.get("/profile", (req, res) => {
 })
 
 app.get("/signup", (req, res) => {
-    var sql = "SELECT * FROM school";
+    var sql = "SELECT * FROM School";
     con.query(sql, (error, results, fields) => {
         if (error) throw error;
         else res.render("signup.ejs", {
@@ -168,7 +168,7 @@ app.get("/signup", (req, res) => {
 // });
 
 app.post("/create_prof", (req, res) => {
-    var sql = "INSERT INTO professors(school_id, department_id, firstname, lastname) VALUES('"
+    var sql = "INSERT INTO Professors(school_id, department_id, firstname, lastname) VALUES('"
     sql += req.body.school + "', '" + req.body.department + "', '" + req.body.fname + "', '" + req.body.lname + "');";
     con.query(sql, (error, results, fields) => {
         if (error) throw error;
@@ -180,13 +180,13 @@ app.post("/create_prof", (req, res) => {
                 myPhoto.mv(path.join(__dirname, '../pictures/'+profilePicture));
             }
             if(profilePicture!=""){
-                sql="UPDATE professors SET profile_picture='"+profilePicture+"' WHERE professor_id='"+results.insertId+"'; ";
+                sql="UPDATE Professors SET profile_picture='"+profilePicture+"' WHERE professor_id='"+results.insertId+"'; ";
                 con.query(sql, (error, subjects, fields) => {
                     if (error) throw error;
                 });
             }
 
-            sql = "INSERT INTO subject_professor_link VALUES ";
+            sql = "INSERT INTO Subject_Professor_Link VALUES ";
             for (var i = 0; i < req.body.subjects.length; i++) {
                 if (i > 0)
                     sql += ", ";
@@ -205,7 +205,7 @@ app.post("/create_prof", (req, res) => {
 
 app.post("/deleteEntry", (req, res) => {
     var sql =   "DELETE "
-        sql +=  "FROM entry "
+        sql +=  "FROM Entry "
         sql +=  "WHERE entry_id=" + req.body.entryID;
     con.query(sql, (error, results, fields) => {
         if (error) throw error;
@@ -226,18 +226,18 @@ app.post("/fetch", (req, res) => {
         sql +=  "        , e.* ";
         sql +=  "        , IFNULL(v.vote, 0) as vote";
         sql +=  "        , IFNULL(uv.vote, 0) as user_vote ";
-        sql +=  "FROM   entry e "
-        sql +=  "       LEFT JOIN user u on e.user_id=u.user_id ";
-        sql +=  "       LEFT JOIN professors p on p.professor_id=e.professor_id ";
-        sql +=  "       LEFT JOIN school s on s.school_id=p.school_id ";
-        sql +=  "       LEFT JOIN department d on d.department_id=p.department_id ";
+        sql +=  "FROM   Entry e "
+        sql +=  "       LEFT JOIN User u on e.user_id=u.user_id ";
+        sql +=  "       LEFT JOIN Professors p on p.professor_id=e.professor_id ";
+        sql +=  "       LEFT JOIN School s on s.school_id=p.school_id ";
+        sql +=  "       LEFT JOIN Department d on d.department_id=p.department_id ";
         sql +=  "       LEFT JOIN (SELECT 	entry_id";
         sql +=  "                        , SUM(vote) as vote ";
-        sql +=  "                       FROM vote ";
+        sql +=  "                       FROM Vote ";
         sql +=  "                GROUP BY entry_id) v on v.entry_id=e.entry_id";
         sql +=  "       LEFT JOIN ( SELECT entry_id";
         sql +=  "				        , vote";
-        sql +=  "                 FROM vote";
+        sql +=  "                 FROM Vote";
         sql +=  "                 WHERE user_id=" + globaluser.user_id + ") uv on uv.entry_id=e.entry_id ";
         sql +=  "ORDER BY e.entry_id desc";
     con.query(sql, (error, results, fields) => {
@@ -251,15 +251,15 @@ app.post("/fetch", (req, res) => {
 });
 
 app.post("/fetch_filter", (req, res) => {
-    var sql = "SELECT school_id AS id, school AS val FROM school";
+    var sql = "SELECT school_id AS id, school AS val FROM School";
     con.query(sql, (error, school, fields) => {
         if (error) throw error;
         else {
-            sql = "SELECT department_id AS id, department AS val FROM department";
+            sql = "SELECT department_id AS id, department AS val FROM Department";
             con.query(sql, (error, department, fields) => {
                 if (error) throw error;
                 else {
-                    sql = "SELECT subjects_id AS id, subjects AS val FROM subjects";
+                    sql = "SELECT subjects_id AS id, subjects AS val FROM Subjects";
                     con.query(sql, (error, subjects, fields) => {
                         if (error) throw error;
                         else {
@@ -277,8 +277,8 @@ app.post("/fetch_filter", (req, res) => {
 });
 
 app.post("/fetch_profs", (req, res) => {
-    var sql = "SELECT * FROM professors p RIGHT JOIN ";
-    var sqls = "(SELECT DISTINCT(professor_id) FROM subject_professor_link WHERE 1=1"
+    var sql = "SELECT * FROM Professors p RIGHT JOIN ";
+    var sqls = "(SELECT DISTINCT(professor_id) FROM Subject_Professor_Link WHERE 1=1"
     for (var i = 1; i <= req.body.subjects.length && req.body.subjects.length != 1; i++) {
         if (i == 1)
             sqls += " AND (subject_id=" + req.body.subjects[i];
@@ -287,7 +287,7 @@ app.post("/fetch_profs", (req, res) => {
         else
             sqls += ") ";
     }
-    sql += sqls + ") s ON s.professor_id = p.professor_id LEFT JOIN school sc ON sc.school_id = p.school_id LEFT JOIN department d ON d.department_id=p.department_id WHERE 1=1"
+    sql += sqls + ") s ON s.professor_id = p.professor_id LEFT JOIN School sc ON sc.school_id = p.school_id LEFT JOIN Department d ON d.department_id=p.department_id WHERE 1=1"
 
     for (var i = 1; i <= req.body.school.length && req.body.school.length != 1; i++) {
         if (i == 1)
@@ -371,17 +371,17 @@ app.post("/prof_header", (req, res) => {
         sql += "        ,school ";
         sql += "        ,department ";
         sql += "        ,p.* ";
-        sql += "FROM professors p ";
-        sql += "     LEFT JOIN school s ON s.school_id = p.school_id ";
-        sql += "     LEFT JOIN department d ON d.department_id = p.department_id ";
+        sql += "FROM Professors p ";
+        sql += "     LEFT JOIN School s ON s.school_id = p.school_id ";
+        sql += "     LEFT JOIN Department d ON d.department_id = p.department_id ";
         sql += "WHERE p.professor_id=" + req.query.profid;
 
     con.query(sql, (error, profinfo, fields) => {
         if (error) throw error;
         else {
             sql =   "SELECT  * ";
-            sql +=  "FROM    subject_professor_link spl ";
-            sql +=  "        LEFT JOIN subjects s ON s.subjects_id=spl.subject_id ";
+            sql +=  "FROM    Subject_Professor_Link spl ";
+            sql +=  "        LEFT JOIN Subjects s ON s.subjects_id=spl.subject_id ";
             sql +=  "WHERE   professor_id=" + req.query.profid;
 
             con.query(sql, (error, subjects, fields) => {
@@ -404,15 +404,15 @@ app.post("/prof_fetch_entry", (req, res) => {
         sql +=  "       ,u.profile_picture ";
         sql +=  "       ,Ifnull(v.vote, 0)  AS vote ";
         sql +=  "       ,Ifnull(uv.vote, 0) AS user_vote ";
-        sql +=  "FROM   entry e ";
-        sql +=  "       LEFT JOIN USER u ON e.user_id = u.user_id ";
+        sql +=  "FROM   Entry e ";
+        sql +=  "       LEFT JOIN User u ON e.user_id = u.user_id ";
         sql +=  "       LEFT JOIN (SELECT entry_id, ";
         sql +=  "                         Sum(vote) AS vote ";
-        sql +=  "                  FROM   vote ";
+        sql +=  "                  FROM   Vote ";
         sql +=  "                  GROUP  BY entry_id) v ON v.entry_id = e.entry_id ";
         sql +=  "       LEFT JOIN (SELECT entry_id, ";
         sql +=  "                         vote ";
-        sql +=  "                  FROM   vote ";
+        sql +=  "                  FROM   Vote ";
         sql +=  "                  WHERE  user_id = " + req.query.user + ") uv ON uv.entry_id = e.entry_id ";
         sql +=  "WHERE  professor_id = " + req.query.profid+" ";
         sql +=  "ORDER BY e.entry_id desc";
@@ -428,8 +428,8 @@ app.post("/prof_fetch_entry", (req, res) => {
 });
 app.post("/profile_header", (req, res) => {
     var sql =   "SELECT * ";
-        sql +=  "FROM    user u ";
-        sql +=  "        LEFT JOIN school s ON s.school_id=u.school_id ";
+        sql +=  "FROM    User u ";
+        sql +=  "        LEFT JOIN School s ON s.school_id=u.school_id ";
         sql +=  "WHERE   user_id = " + req.body.id;
 
     con.query(sql, (error, results, fields) => {
@@ -449,15 +449,15 @@ app.post("/profile_fetch_entry", (req, res) => {
         sql +=  "       ,p.profile_picture ";
         sql +=  "       ,Ifnull(v.vote, 0)  AS vote ";
         sql +=  "       ,Ifnull(uv.vote, 0) AS user_vote ";
-        sql +=  "FROM   entry e ";
-        sql +=  "       LEFT JOIN professors p ON e.professor_id = p.professor_id ";
+        sql +=  "FROM   Entry e ";
+        sql +=  "       LEFT JOIN Professors p ON e.professor_id = p.professor_id ";
         sql +=  "       LEFT JOIN (SELECT entry_id, ";
         sql +=  "                         Sum(vote) AS vote ";
-        sql +=  "                  FROM   vote ";
+        sql +=  "                  FROM   Vote ";
         sql +=  "                  GROUP  BY entry_id) v ON v.entry_id = e.entry_id ";
         sql +=  "       LEFT JOIN (SELECT entry_id, ";
         sql +=  "                         vote ";
-        sql +=  "                  FROM   vote ";
+        sql +=  "                  FROM   Vote ";
         sql +=  "                  WHERE  user_id = " + req.query.user + ") uv ON uv.entry_id = e.entry_id ";
         sql +=  "WHERE  e.user_id = " + req.query.user + " ";
         sql +=  "ORDER BY e.entry_id desc";
@@ -474,7 +474,7 @@ app.post("/profile_fetch_entry", (req, res) => {
 
 app.post("/update", (req, res) => {
     if (req.query.load == 0) {
-        var sql =   "UPDATE entry "
+        var sql =   "UPDATE Entry "
             sql +=  "SET content='" + req.body.editedPost + "' ";
             sql +=  "WHERE entry_id  = " + req.query.entryid;
 
@@ -495,7 +495,7 @@ app.post("/update_profile", (req, res) => {
         globaluser.picture=profilePicture;
     }
     
-    var sql =   "UPDATE user SET ";
+    var sql =   "UPDATE User SET ";
         sql +=  "username='"+req.body.username+"'";
         sql +=  ", school_id='"+req.body.school+"'";
         sql +=  ", year_level='"+req.body.year_level+"'";
@@ -515,7 +515,7 @@ app.post("/update_profile", (req, res) => {
 });
 
 app.post("/vote", (req, res) => {
-    var sql =   "INSERT INTO vote VALUES(";
+    var sql =   "INSERT INTO Vote VALUES(";
         sql +=   req.body.userID
         sql +=  ", " + req.body.entryID
         sql +=  ", " + req.body.vote + ") ";
