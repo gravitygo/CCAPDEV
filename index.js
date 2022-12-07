@@ -5,12 +5,7 @@ const fileUpload = require('express-fileupload');
 // const bcrypt = require('bcrypt');
 const path = require('path')
 const app = express();
-var con = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "password",
-    database: "ptp"
-});
+var con = mysql.createConnection("mysql://root:etlnmKxkvmjB4YZKYklh@containers-us-west-128.railway.app:5582/railway");
 app.use(fileUpload());
 app.use(express.static(__dirname));
 app.use(bodyParser.urlencoded({extended: true}));
@@ -20,9 +15,16 @@ app.set('views',path.join(__dirname, '/Views'));
 global.globaluser={};
 
 app.get("/", (req, res) => {
-    var message = req.query.error;
-    res.render("index.ejs", {
-        msg: message
+    var sql = "SELECT * FROM department";
+    con.query(sql, (error, department, fields) => {
+        if (error) throw error;
+        else{
+            var message = req.query.error;
+            res.render("index.ejs", {
+                msg: message,
+                department: department
+            });
+        }
     });
 });
 
