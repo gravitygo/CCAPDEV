@@ -7,25 +7,8 @@ const path = require('path');
 const multer = require('multer');
 const app = express();
 
-// const storage = multer.diskStorage({
-//     destination: (req, file, cb)=>{
-//         cb(null, 'pictures');
-//     },
-//     filename: (req, file, cb) => {
-//         console.log(file, req);
-//         cb(null, Date.now() + path.extname(file.originalname));
-//     }
-// });
+var con = mysql.createConnection("mysql://root:etlnmKxkvmjB4YZKYklh@containers-us-west-128.railway.app:5582/railway");
 
-// const upload = multer({storage: storage});
-
-var con = mysql.createConnection({
-    host     : 'containers-us-west-128.railway.app',
-    user     : 'root',
-    password : 'etlnmKxkvmjB4YZKYklh',
-    port     : '5582',
-    database : 'railway'
-});
 app.use(fileUpload());
 app.use(express.static(__dirname));
 app.use(bodyParser.urlencoded({extended: true}));
@@ -165,7 +148,6 @@ app.post("/create_account", (req, res) => {
             } else {
                 var profilePicture = "";
                 if(req.files!=null){
-                    // upload.single('myPhoto', {id: 1});
                     const { myPhoto } = req.files;
                     profilePicture = 'u'+profile.insertId+'.' + myPhoto.name.split('.').pop();
                     myPhoto.mv(path.join(__dirname, '/pictures/'+profilePicture));
