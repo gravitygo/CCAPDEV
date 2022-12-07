@@ -81,8 +81,6 @@ form select{
     width: 200px;
     height: auto;
     border-radius: 50%;
-	align-self: center;
-	margin-left: 40px;
 }
 .avatar-image{
     width: 360px;
@@ -169,34 +167,6 @@ form select{
     background-color: var(--red);
     width: 250px;
 }
-
-/*.card {
-    margin-left: auto;
-    box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.25);
-}
-
-.card a {
-    text-decoration: none;
-    color: black;
-}
-
-.card a:hover {
-    color: black;
-    opacity: 50%;
-}
-
-.card-body {
-    align-items: center;
-}
-
-.card-body h5 {
-    text-align: center;
-}
-
-.card-body p {
-    margin-bottom: 0;
-    text-align: center;
-}*/
 .color-black{
     color: var(--black);
 }
@@ -337,6 +307,7 @@ form select{
 
 .entry-prof-img {
     width: 150px;
+    height: 150px;
     border-radius: 75px;
 }
 
@@ -487,7 +458,7 @@ form select{
     width: 200px;
 }
 
-.img-form:hover {
+form.img-form:hover {
     filter: brightness(50%);
 }
 
@@ -631,6 +602,7 @@ form select{
 
 .nav-profile {
     width: 40px;
+    height: 40px;
     border-radius: 30px;
 }
 
@@ -703,12 +675,12 @@ form select{
     font-weight: 700;
 }
 
-.right-sign-up{
-	display: flex;
-	padding: 0 250px 0;
-	flex-direction: column;
-	flex: 1;
-	font-size: 30px;
+.right-sign-up {
+    display: flex;
+    padding: 0 250px 0;
+    flex-direction: column;
+    flex: 1;
+    font-size: 30px;
 }
 
 .right-sign-up input {
@@ -839,68 +811,6 @@ form select{
 .zero {
     color: var(--neutral);
 }
-
-
-/* .collapse {
-    display: none;
-}
-
-.collapse.show {
-    display: block;
-}
-
-.collapsing {
-    position: relative;
-    height: 0;
-    overflow: hidden;
-    transition: height .35s ease;
-} */
-
-
-/* Professor Profile / Description Styles */
-
-.professor-stars {
-	margin-left: 50px;
-}
-
-.avatar-img {
-	align-items: center;
-	justify-content: center;
-}
-
-.side-prof-area {
-    float: left;
-    padding: 150px 50px;
-	width: 500px;
-}
-
-.container-reviews h4{
-    margin-top: 20px;}
-
-/* .container-subjects h4{
-    margin: 58px auto 20px;
-    color: #000;
-    font-weight: 200;
-    font-size: 30px;
-	margin-left: 20px;
-}
-
-.reviews-box {
-    border-radius: 20px;
-    height: 370px;
-    padding-top: 15px;
-	margin-left: 20px;
-}
-
-.review-oval {
-   margin-left: 20px;
-   border-bottom: #2f2f2f solid;
-   border-width: 1px;
-   padding-top: 10px;
-}
-
-          /*Start Add Prof */
-         
          .addprof-title {
              margin-top: 100px;
              text-align: center;
@@ -1042,9 +952,6 @@ form select{
     margin-bottom: 0px;
 }
 
-.review-oval p {
-	margin-bottom: 0px;
-}
 
 .profProfile-content {
     float: left;
@@ -1067,12 +974,6 @@ form select{
     padding-left: 5px;
     padding-right: 5px;
 }
-.col a{
-	text-decoration: none;
-	color: var(--background);
-}
-/* Professor Profile / Description Styles */
-
 .professor-stars {
 	margin-left: 50px;
 }
@@ -1140,7 +1041,6 @@ form select{
 	align-items: center;
 	padding-left: 120px;
 }
-
 .profProfile-content {
 	float: left;
 	width: 1000px;
@@ -1154,7 +1054,6 @@ form select{
 	padding: 10px;
 	height: 500px;
 }
-
 .profProfile-review-container {
 	border-color: #AAAAAA;
 	border-style: solid;
@@ -1183,7 +1082,6 @@ form select{
 	border-bottom: #2f2f2f solid;
 	border-width: 3px;
 }
-
 .real-subjects-box {
 	height: 150px;
 	margin-bottom: 5px;
@@ -1201,7 +1099,6 @@ form select{
 	/* border-bottom: #2F2F2F solid;
 	border-width: 1px; */
 }
-
 .profProfile-comment {
 	float: left;
 	width: 1000px;
@@ -1225,6 +1122,3 @@ form select{
 	margin-top: 20px;
 	margin-bottom: 20px;
 }
-
-/* .button-comment {
-} */
