@@ -9,8 +9,7 @@ var con = mysql.createConnection({
     host: "containers-us-west-128.railway.app",
     user: "root",
     password: "etlnmKxkvmjB4YZKYklh",
-    database: "railway",
-    port: "5582"
+    database: "railway"
 });
 app.use(fileUpload());
 app.use(express.static(__dirname));
@@ -21,16 +20,10 @@ app.set('views',path.join(__dirname, '/Views'));
 global.globaluser={};
 
 app.get("/", (req, res) => {
-    con.query("SELECT * FROM school",(error, department, fields)=>{
-        if (error) throw error;
-        else{
-            var message = req.query.error;
-            res.render("index.ejs", {
-                msg: message,
-                department: department
-            });
-        }
-    })
+    var message = req.query.error;
+    res.render("index.ejs", {
+        msg: message
+    });
 });
 
 app.get("/add_prof", (req, res) => {
