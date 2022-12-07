@@ -20,6 +20,7 @@ app.set('views',path.join(__dirname, '/Views'));
 global.globaluser={};
 
 app.get("/", (req, res) => {
+    console.log(con);
     var message = req.query.error;
     res.render("index.ejs", {
         msg: message
