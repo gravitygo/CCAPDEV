@@ -5,7 +5,13 @@ const fileUpload = require('express-fileupload');
 // const bcrypt = require('bcrypt');
 const path = require('path')
 const app = express();
-var con = mysql.createConnection("mysql://${{ MYSQLUSER }}:${{ MYSQLPASSWORD }}@${{ MYSQLHOST }}:${{ MYSQLPORT }}/${{ MYSQLDATABASE }}");
+var con = mysql.createConnection({
+    host: "containers-us-west-128.railway.app",
+    user: "root",
+    password: "etlnmKxkvmjB4YZKYklh",
+    database: "railway",
+    port: "5582"
+});
 app.use(fileUpload());
 app.use(express.static(__dirname));
 app.use(bodyParser.urlencoded({extended: true}));
