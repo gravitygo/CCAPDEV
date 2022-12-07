@@ -20,11 +20,16 @@ app.set('views',path.join(__dirname, '/Views'));
 global.globaluser={};
 
 app.get("/", (req, res) => {
-    console.log(con);
-    var message = req.query.error;
-    res.render("index.ejs", {
-        msg: message
-    });
+    con.query("SELECT * FROM school",(error, department, fields)=>{
+        if (error) throw error;
+        else{
+            var message = req.query.error;
+            res.render("index.ejs", {
+                msg: message,
+                department: department
+            });
+        }
+    })
 });
 
 app.get("/add_prof", (req, res) => {
