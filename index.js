@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mysql = require('mysql');
 const fileUpload = require('express-fileupload');
-const bcrypt = require('bcrypt');
+// const bcrypt = require('bcrypt');
 const path = require('path')
 const app = express();
 var con = mysql.createConnection({
@@ -125,39 +125,39 @@ app.get("/signup", (req, res) => {
 
 });
 
-app.post("/create_account", (req, res) => {
-    if (req.body.password != req.body.repassword) {
-        res.redirect("/signup?error=1");
-    } else {
-        var sql =   "INSERT INTO user(school_id,username, password, year_level, course, biography) VALUES(";
-            sql +=  "'" + req.body.school + "'";
-            sql +=  ", '" + req.body.username + "'";
-            sql +=  ", '" + bcrypt.hashSync(req.body.password, 10) + "'";
-            sql +=  ", '" + req.body.yearLevel + "'";
-            sql +=  ", '" + req.body.course + "'";
-            sql +=  ", '" + req.body.bio + "')";
+// app.post("/create_account", (req, res) => {
+//     if (req.body.password != req.body.repassword) {
+//         res.redirect("/signup?error=1");
+//     } else {
+//         var sql =   "INSERT INTO user(school_id,username, password, year_level, course, biography) VALUES(";
+//             sql +=  "'" + req.body.school + "'";
+//             sql +=  ", '" + req.body.username + "'";
+//             sql +=  ", '" + bcrypt.hashSync(req.body.password, 10) + "'";
+//             sql +=  ", '" + req.body.yearLevel + "'";
+//             sql +=  ", '" + req.body.course + "'";
+//             sql +=  ", '" + req.body.bio + "')";
         
-        con.query(sql, (error, profile, fields) => {
-            if (error) {
-                res.redirect("/signup?error=2");
-            } else {
-                var profilePicture = "";
-                if(req.files!=null){
-                    const { myPhoto } = req.files;
-                    profilePicture = 'u'+profile.insertId+'.' + myPhoto.name.split('.').pop();
-                    myPhoto.mv(path.join(__dirname, '../pictures/'+profilePicture));
-                    sql =   "UPDATE user ";
-                    sql +=  "SET profile_picture='"+profilePicture+"' ";
-                    sql +=  "WHERE user_id='"+profile.insertId+"'";
-                    con.query(sql, (error, subjects, fields) => {
-                        if (error) throw error;
-                    });
-                }
-                res.redirect("/");
-            }
-        });
-    }
-});
+//         con.query(sql, (error, profile, fields) => {
+//             if (error) {
+//                 res.redirect("/signup?error=2");
+//             } else {
+//                 var profilePicture = "";
+//                 if(req.files!=null){
+//                     const { myPhoto } = req.files;
+//                     profilePicture = 'u'+profile.insertId+'.' + myPhoto.name.split('.').pop();
+//                     myPhoto.mv(path.join(__dirname, '../pictures/'+profilePicture));
+//                     sql =   "UPDATE user ";
+//                     sql +=  "SET profile_picture='"+profilePicture+"' ";
+//                     sql +=  "WHERE user_id='"+profile.insertId+"'";
+//                     con.query(sql, (error, subjects, fields) => {
+//                         if (error) throw error;
+//                     });
+//                 }
+//                 res.redirect("/");
+//             }
+//         });
+//     }
+// });
 
 app.post("/create_prof", (req, res) => {
     var sql = "INSERT INTO professors(school_id, department_id, firstname, lastname) VALUES('"
@@ -332,31 +332,31 @@ app.post("/insert_entry", (req, res) => {
     });
 });
 
-app.post("/login", (req, res) => {
-    var sql =   "SELECT * ";
-        sql +=  "FROM   user ";
-        sql +=  "WHERE  username='" + req.body.username+"'";
+// app.post("/login", (req, res) => {
+//     var sql =   "SELECT * ";
+//         sql +=  "FROM   user ";
+//         sql +=  "WHERE  username='" + req.body.username+"'";
 
-    con.query(sql, (error, results, fields) => {
-        if (error) throw error;
-        else if (results.length == 0) {
-            var message = encodeURIComponent(2);
-            res.redirect("/?error=" + message);
-        } else {
-            if(bcrypt.compareSync(req.body.password, results[0].password)){
-                globaluser = {
-                    user_id: results[0].user_id,
-                    picture: results[0].profile_picture
-                }
-                res.redirect("/entry");
-            }else{
-                var message = encodeURIComponent(1);
-                res.redirect("/?error=" + message);
-            }
+//     con.query(sql, (error, results, fields) => {
+//         if (error) throw error;
+//         else if (results.length == 0) {
+//             var message = encodeURIComponent(2);
+//             res.redirect("/?error=" + message);
+//         } else {
+//             if(bcrypt.compareSync(req.body.password, results[0].password)){
+//                 globaluser = {
+//                     user_id: results[0].user_id,
+//                     picture: results[0].profile_picture
+//                 }
+//                 res.redirect("/entry");
+//             }else{
+//                 var message = encodeURIComponent(1);
+//                 res.redirect("/?error=" + message);
+//             }
             
-        }
-    });
-});
+//         }
+//     });
+// });
 
 app.post("/prof_header", (req, res) => {
     var sql = "SELECT  CONCAT(firstname, ' ', lastname) as full_name ";
