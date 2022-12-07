@@ -137,7 +137,7 @@ app.post("/create_account", (req, res) => {
     if (req.body.password != req.body.repassword) {
         res.redirect("/signup?error=1");
     } else {
-        var sql =   "INSERT INTO user(school_id,username, password, year_level, course, biography) VALUES(";
+        var sql =   "INSERT INTO User(school_id,username, password, year_level, course, biography) VALUES(";
             sql +=  "'" + req.body.school + "'";
             sql +=  ", '" + req.body.username + "'";
             sql +=  ", '" + bcrypt.hashSync(req.body.password, 10) + "'";
@@ -154,7 +154,7 @@ app.post("/create_account", (req, res) => {
                     const { myPhoto } = req.files;
                     profilePicture = 'u'+profile.insertId+'.' + myPhoto.name.split('.').pop();
                     myPhoto.mv(path.join(__dirname, '../pictures/'+profilePicture));
-                    sql =   "UPDATE user ";
+                    sql =   "UPDATE User ";
                     sql +=  "SET profile_picture='"+profilePicture+"' ";
                     sql +=  "WHERE user_id='"+profile.insertId+"'";
                     con.query(sql, (error, subjects, fields) => {
