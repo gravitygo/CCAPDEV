@@ -342,7 +342,7 @@ app.post("/insert_entry", (req, res) => {
 
 app.post("/login", (req, res) => {
     var sql =   "SELECT * ";
-        sql +=  "FROM   user ";
+        sql +=  "FROM   User ";
         sql +=  "WHERE  username='" + req.body.username+"'";
 
     con.query(sql, (error, results, fields) => {
