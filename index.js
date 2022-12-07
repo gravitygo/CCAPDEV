@@ -12,10 +12,10 @@ var con = mysql.createConnection({
     database: "ptp"
 });
 app.use(fileUpload());
-app.use(express.static(path.join(__dirname, '../')));
+app.use(express.static(__dirname));
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.set('views',path.join(__dirname, '../Views'));
+app.set('views',path.join(__dirname, '/Views'));
 
 global.globaluser={};
 
