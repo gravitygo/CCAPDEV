@@ -497,7 +497,8 @@ app.post("/update_profile", (req, res) => {
         sql +=  ", year_level='"+req.body.year_level+"'";
         sql +=  ", course='"+req.body.course+"'";
         sql +=  ", biography='"+req.body.bio+"'";
-        sql +=  ", password='"+req.body.password+"'";
+        if(req.body.password!="")
+            sql +=  ", password='"+bcrypt.hashSync(req.body.password, 10)+"'";
         if(profilePicture!="")
             sql += ", profile_picture='"+ profilePicture +"'";
         sql +=  "WHERE user_id = '"+globaluser.user_id+"'";
