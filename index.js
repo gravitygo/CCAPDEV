@@ -4,7 +4,6 @@ const mysql = require('mysql');
 const fileUpload = require('express-fileupload');
 const bcrypt = require('bcrypt');
 const path = require('path');
-const multer = require('multer');
 const app = express();
 
 var con = mysql.createConnection("mysql://root:etlnmKxkvmjB4YZKYklh@containers-us-west-128.railway.app:5582/railway");
