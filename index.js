@@ -523,6 +523,6 @@ app.post("/vote", (req, res) => {
     });
 });
 
-app.listen('3000', () => {
+app.listen('0.0.0.0:$PORT', () => {
     console.log("Server start at port 3000");
 });
