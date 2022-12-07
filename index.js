@@ -6,10 +6,10 @@ const fileUpload = require('express-fileupload');
 const path = require('path')
 const app = express();
 var con = mysql.createConnection({
-    host: "localhost",
+    host: "containers-us-west-128.railway.app",
     user: "root",
-    password: "password",
-    database: "ptp"
+    password: "etlnmKxkvmjB4YZKYklh",
+    database: "railway"
 });
 app.use(fileUpload());
 app.use(express.static(__dirname));
