@@ -3,8 +3,22 @@ const bodyParser = require('body-parser');
 const mysql = require('mysql');
 const fileUpload = require('express-fileupload');
 const bcrypt = require('bcrypt');
-const path = require('path')
+const path = require('path');
+const multer = require('multer');
 const app = express();
+
+// const storage = multer.diskStorage({
+//     destination: (req, file, cb)=>{
+//         cb(null, 'pictures');
+//     },
+//     filename: (req, file, cb) => {
+//         console.log(file, req);
+//         cb(null, Date.now() + path.extname(file.originalname));
+//     }
+// });
+
+// const upload = multer({storage: storage});
+
 var con = mysql.createConnection({
     host     : 'containers-us-west-128.railway.app',
     user     : 'root',
@@ -151,9 +165,10 @@ app.post("/create_account", (req, res) => {
             } else {
                 var profilePicture = "";
                 if(req.files!=null){
+                    // upload.single('myPhoto', {id: 1});
                     const { myPhoto } = req.files;
                     profilePicture = 'u'+profile.insertId+'.' + myPhoto.name.split('.').pop();
-                    myPhoto.mv(path.join(__dirname, '../pictures/'+profilePicture));
+                    myPhoto.mv(path.join(__dirname, '/pictures/'+profilePicture));
                     sql =   "UPDATE User ";
                     sql +=  "SET profile_picture='"+profilePicture+"' ";
                     sql +=  "WHERE user_id='"+profile.insertId+"'";
@@ -177,7 +192,7 @@ app.post("/create_prof", (req, res) => {
             if(req.files!=null){
                 const { myPhoto } = req.files;
                 profilePicture = 'p'+results.insertId+'.' + myPhoto.name.split('.').pop();
-                myPhoto.mv(path.join(__dirname, '../pictures/'+profilePicture));
+                myPhoto.mv(path.join(__dirname, '/pictures/'+profilePicture));
             }
             if(profilePicture!=""){
                 sql="UPDATE Professors SET profile_picture='"+profilePicture+"' WHERE professor_id='"+results.insertId+"'; ";
@@ -491,7 +506,7 @@ app.post("/update_profile", (req, res) => {
     if(req.files!=null){
         const { myPhoto } = req.files;
         profilePicture = 'u'+globaluser.user_id+'.' + myPhoto.name.split('.').pop();
-        myPhoto.mv(path.join(__dirname, '../pictures/'+profilePicture));
+        myPhoto.mv(path.join(__dirname, '/pictures/'+profilePicture));
         globaluser.picture=profilePicture;
     }
     
